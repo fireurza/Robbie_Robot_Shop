@@ -8,6 +8,7 @@ package robbie_robot_shop;
  *
  * @author dusti
  */
-public class Head {
-    
+public class Head extends Component{
+    //constructors
+    //getters
 }

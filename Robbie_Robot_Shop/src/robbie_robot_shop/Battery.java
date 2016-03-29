@@ -8,6 +8,10 @@ package robbie_robot_shop;
  *
  * @author dusti
  */
-public class Battery {
+public class Battery extends Component{
+    double energy;
+    double maxPower;
     
+    //constructors
+    //getters
 }
