@@ -8,6 +8,14 @@ package robbie_robot_shop;
  *
  * @author dusti
  */
-public class Locomotor {
+public class Locomotor extends Component{
+    int maxSpeed;
     
+    //constructors
+    //getters
+    
+    int powerConsumed(int speed){
+        int totalPower = 0;
+        return totalPower;
+    }
 }

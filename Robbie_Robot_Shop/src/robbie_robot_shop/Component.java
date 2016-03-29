@@ -8,6 +8,25 @@ package robbie_robot_shop;
  *
  * @author dusti
  */
-public class Component {
+public abstract class Component {
+    String name;
+    int partNumber;
+    String type;
+    double weight;
+    double price;
+    String description;
+    Boolean approved;
+    Boolean Obsolete;
     
+    void Create(){
+        
+    }
+    
+    void Edit(){
+        
+    }
+    
+    void View(){
+        
+    }
 }
