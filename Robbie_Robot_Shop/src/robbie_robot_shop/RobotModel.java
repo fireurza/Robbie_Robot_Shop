@@ -5,10 +5,7 @@
  */
 package robbie_robot_shop;
 
-/**
- *
- * @author Gasser
- */
+
 public class RobotModel {
     private String name;
     private int modelNumber=1;
@@ -22,7 +19,16 @@ public RobotModel(String n,double p){
 this.name=n;
 this.modelNumber=this.modelNumber++;
 this.price=p;
-}    
+}  
 
-//methods
+static double ComponentCost(int modelNumber,double price)
+{
+    return price;
+}
+
+static double maxSpeed(int maxSpeed)
+{
+    return maxSpeed;
+}
+
 }
