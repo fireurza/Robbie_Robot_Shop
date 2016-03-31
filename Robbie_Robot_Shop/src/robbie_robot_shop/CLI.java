@@ -42,7 +42,7 @@ public class CLI {
         }
     }
     
-    private static void shop(){
+    private static int shop(){
         clearScreen();
         printTitle();
         System.out.println("==========SHOP==========");
@@ -52,20 +52,41 @@ public class CLI {
         System.out.println("3 - Browse Catalog");
         System.out.println("4 - Exit");
         System.out.println("");
-        
-        
-        
-    }
+        Scanner sc = new Scanner(System.in);
+        int input = sc.nextInt();
+        sc.close();
+        return input;
+        }
     
     public static void main(String[] args) {
         clearScreen();
         // Display menu 1
         int input = menu1();
+        boolean done = false;
         // Check menu 1 selection
         if(input == 1){
+            do {
             clearScreen();
             // Call Shop Function
-            shop();
+            int input2 = shop();
+            if (input2 == 1){
+                // Create part
+            }
+            if (input2 == 2){
+                // Design Model
+            }
+            if (input2 == 3){
+                // Browse Catalog
+            }
+            if (input2 == 4){
+                // exit shopping menu
+                done = true;
+            }
+            else {
+                System.out.println("Unrecognized input");
+                
+            }
+            }while (!done);
         }
         else if(input == 2){
             clearScreen();
