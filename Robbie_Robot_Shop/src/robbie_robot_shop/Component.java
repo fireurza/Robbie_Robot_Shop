@@ -12,19 +12,57 @@ public abstract class Component {
     String type;
     double weight;
     double price;
-    String description;
-    Boolean approved;
-    Boolean Obsolete;
     
-    void Create(){
+    public Component(String myName, int myPartNumber, String myType, double myWeight, double myPrice)
+    {
+        this.name = myName;
+        this.partNumber = myPartNumber;
+        this.type = myType;
+        this.weight = myWeight;
+        this.price = myPrice;
+    }
+    
+    public Component()
+    {
+     
+    }
+    
+    //Getters
+    public String getName()
+    {
+        return this.name;
+    }
+    
+    public int getPartNumber()
+    {
+        return this.partNumber;
+    }
+    
+    public String getType()
+    {
+        return this.type;
+    }
+    
+    public double getWeight()
+    {
+        return this.weight;
+    }
+    
+    public double getPrice()
+    {
+        return this.price;
+    }
+    
+    public void create()
+    {
         
     }
     
-    void Edit(){
+    public void view()
+    {
         
     }
     
-    void View(){
-        
-    }
+    
+    abstract void printSpecs(); 
 }
