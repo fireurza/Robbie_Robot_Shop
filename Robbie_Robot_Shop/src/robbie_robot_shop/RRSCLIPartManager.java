@@ -131,23 +131,56 @@ public class RRSCLIPartManager {
     }
     
     public static void newTorso(){
-        
+        // Create new Torso here
+//        String name;
+//        double weight;
+//        double price;
+//        String description;
+//        boolean approved;
+//        boolean obsolete;
     }
     
     public static void newBattery(){
-        
-    }
+        // Create new battery here
+//        String name;
+//        double weight;
+//        double price;
+//        String description;
+//        boolean approved;
+//        boolean obsolete;
+//        double energy;
+//        double maxPower;
+       
+   }
     
     public static void newHead(){
-        
+        // Create new head here
+//        String name;
+//        double weight;
+//        double price;
+//        String description;
+//        boolean approved;
+//        boolean obsolete;
     }
     
     public static void newArm(){
-        
+        // Create new arm here
+//        String name;
+//        double weight;
+//        double price;
+//        String description;
+//        boolean approved;
+//        boolean obsolete;
     }
     
     public static void newLocomotor(){
-        
+        // Create new locomotor here
+//        String name;
+//        double weight;
+//        double price;
+//        String description;
+//        boolean approved;
+//        boolean obsolete;
     }
     
     public static void main(String[] args){
