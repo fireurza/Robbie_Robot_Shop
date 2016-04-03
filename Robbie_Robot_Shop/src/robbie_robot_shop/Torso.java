@@ -33,9 +33,5 @@ public class Torso extends Component {
         this.armSockets = myArmSockets;
     }
     
-    @Override
-    void printSpecs()
-    {
-        System.out.println(this.myName);
-    }
+    
 }

@@ -26,9 +26,5 @@ public class Locomotor extends Component{
         return totalPower;
     }
     
-    @Override
-    void printSpecs()
-    {
-        System.out.println(this.myName);
-    }
+    
 }

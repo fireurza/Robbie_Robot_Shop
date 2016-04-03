@@ -14,10 +14,6 @@ public class Head extends Component{
         super();
     }
     
-    @Override
-    void printSpecs()
-    {
-        System.out.println(this.myName);
-    }
+    
     
 }

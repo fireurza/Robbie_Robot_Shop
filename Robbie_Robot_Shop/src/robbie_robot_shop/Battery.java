@@ -33,9 +33,5 @@ public class Battery extends Component{
         this.maxPower = myMaxPower;
     }
     
-    @Override 
-    protected void printSpecs()
-    {
-        System.out.println(this.myName);
-    }
+    
 }

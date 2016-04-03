@@ -19,9 +19,5 @@ public class Arm extends Component{
     }
     
     
-    @Override
-    void printSpecs()
-    {
-        System.out.println(this.myName);
-    }
+    
 }
