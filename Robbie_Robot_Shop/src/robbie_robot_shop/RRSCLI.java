@@ -69,7 +69,7 @@ public class RRSCLI {
         }
         }while(!exit);
         // Close all Formatters
-        fParts.close();
+        //fParts.close();
         
         
         }
