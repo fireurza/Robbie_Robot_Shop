@@ -8,19 +8,23 @@ package robbie_robot_shop;
  */
 public abstract class Component {
     private String name;
-    private int partNumber;
+    private int partNumber = 0; 
     private String type;
     private double weight;
     private double price;
-    
+    private String description;
+    private boolean isObsolete = false; // A way to mark obsolete parts
+    private boolean isApproved = false; // A way to limit parts from production while testing
+    private static int numberOfParts = 0; //# of parts in sequestial whole numbers
     // Constructors for createing new parts
-    public Component(String myName, int myPartNumber, String myType, double myWeight, double myPrice)
+    public Component(String myName, String myType, double myWeight, double myPrice, String myDescription)
     {
         this.name = myName;
-        this.partNumber = myPartNumber;
+        this.partNumber = numberOfParts++;
         this.type = myType;
         this.weight = myWeight;
         this.price = myPrice;
+        this.description = myDescription;
     }
     
     public Component(){
