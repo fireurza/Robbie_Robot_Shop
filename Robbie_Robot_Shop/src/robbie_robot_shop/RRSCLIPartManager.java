@@ -4,8 +4,6 @@
  */
 package robbie_robot_shop;
 
-import java.util.Scanner;
-
 /**
  *
  * @author dusti
@@ -23,8 +21,7 @@ public class RRSCLIPartManager {
         System.out.println("(N)ew part");
         //System.out.println("(E)dit Part");
         System.out.println("E(x)it");
-        Scanner sc = new Scanner(System.in);
-        int input = sc.nextInt();
+        int input = CLIinput.getChar(" Select Option ");
         if (input == 'V' || input == 'v'){
             viewPart();
         }
@@ -53,8 +50,7 @@ public class RRSCLIPartManager {
         //System.out.println("(B)rowse");
         //System.out.println("(S)earch");
         System.out.println("E(x)it");
-        Scanner sc = new Scanner(System.in);
-        int input = sc.nextInt();
+        int input = CLIinput.getChar(" Select Option ");
         if (input == 'B' || input == 'b'){
             browseParts();
         }
@@ -83,8 +79,7 @@ public class RRSCLIPartManager {
         System.out.println("New (A)rm");
         System.out.println("New (L)ocomotor");
         System.out.println("E(x)it");
-        Scanner sc = new Scanner(System.in);
-        int input = sc.nextInt();
+        int input = CLIinput.getChar(" Select Option ");
         if (input == 'T' || input == 't'){
             newTorso();
         }
@@ -117,8 +112,7 @@ public class RRSCLIPartManager {
         System.out.println("======Part Editor=======");
         System.out.println("");
         System.out.println("E(x)it");
-        Scanner sc = new Scanner(System.in);
-        int input = sc.nextInt();
+        int input = CLIinput.getChar(" Select Option ");
         if (input == 'X' || input == 'x'){
             exit = true;
         }

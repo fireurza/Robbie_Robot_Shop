@@ -2,8 +2,6 @@
  */
 package robbie_robot_shop;
 
-import java.util.Scanner;
-
 /*
  */
 public class RRSCLI {
@@ -24,7 +22,7 @@ public class RRSCLI {
         }
     }
     
-    public static void main(){
+    public static void main(String[] args){
         boolean exit = false;
         do{
         clearScreen();
@@ -35,8 +33,7 @@ public class RRSCLI {
         //System.out.println("(M)odels");
         //System.out.println("(O)rders");
         System.out.println("E(x)it");
-        Scanner sc = new Scanner(System.in);
-        int input = sc.nextInt();
+        int input = CLIinput.getChar(" Select Option ");
         if (input == 'P' || input == 'p'){
             RRSCLIPartManager.partManager();
         }
