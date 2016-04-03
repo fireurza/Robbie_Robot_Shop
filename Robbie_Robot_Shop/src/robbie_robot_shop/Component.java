@@ -7,12 +7,13 @@ package robbie_robot_shop;
  *
  */
 public abstract class Component {
-    String name;
-    int partNumber;
-    String type;
-    double weight;
-    double price;
+    private String name;
+    private int partNumber;
+    private String type;
+    private double weight;
+    private double price;
     
+    // Constructors for createing new parts
     public Component(String myName, int myPartNumber, String myType, double myWeight, double myPrice)
     {
         this.name = myName;
@@ -22,12 +23,8 @@ public abstract class Component {
         this.price = myPrice;
     }
     
-    public Component()
-    {
-     
-    }
     
-    //Getters
+    //Getters for viewing information
     public String getName()
     {
         return this.name;
@@ -53,16 +50,29 @@ public abstract class Component {
         return this.price;
     }
     
-    public void create()
+    // Setters for editing information
+    public void setName(String myName)
     {
-        
+        this.name = myName;
     }
     
-    public void view()
+    public void setPartNumber(int myPartNumber)
     {
-        
+        this.partNumber = myPartNumber;
     }
     
+    public void setType(String myType)
+    {
+        this.type = myType;
+    }
     
-    abstract void printSpecs(); 
+    public void setWeight(double myWeight)
+    {
+        this.weight = myWeight;
+    }
+    
+    public void setPrice(double myPrice)
+    {
+        this.price = myPrice;
+    }
 }
