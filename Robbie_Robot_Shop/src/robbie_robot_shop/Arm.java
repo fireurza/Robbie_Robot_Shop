@@ -6,7 +6,7 @@ package robbie_robot_shop;
  *
  */
 public class Arm extends Component{
-    String myName = "Arm prototype";
+    private double powerConsumptionRate;
     
     public Arm()
     {

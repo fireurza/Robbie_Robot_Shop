@@ -23,6 +23,9 @@ public abstract class Component {
         this.price = myPrice;
     }
     
+    public Component(){
+        
+    }
     
     //Getters for viewing information
     public String getName()
