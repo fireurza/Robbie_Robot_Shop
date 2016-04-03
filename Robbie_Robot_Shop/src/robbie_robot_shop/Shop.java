@@ -12,19 +12,46 @@ public class Shop {
     Customer[] customers=new Customer[100];
     SalesAssociate[] salesAssociates=new SalesAssociate[100];
     
+    // Constructor
     public Shop(){
          
      }   
     
-    void createRobotPart(){}
+    // Utility methods
     
-    void createRobotModel(){}
+    public void createPart(){
     
-    void newCustomer(){}
+    }
     
-    void placeOrder(){}
+    public void editPart(){
+        
+    }
     
-    void runReport(){}
+    public void createModel(){
     
-    void save(){}
+    }
+    
+    public void editModel(){
+    
+    }
+    
+    public void newCustomer(){
+    
+    }
+    
+    public void editCustomer(){
+        
+    }
+    
+    void placeOrder(){
+    
+    }
+    
+    void runReport(){
+    
+    }
+    
+    void save(){
+    
+    }
 }

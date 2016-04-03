@@ -7,11 +7,18 @@ package robbie_robot_shop;
  */
 public class Locomotor extends Component{
     int maxSpeed;
-    String myName = "Locomotor prototype";
 
     public Locomotor()
     {
         super();
+    }
+    
+    public int getMaxSpeed(){
+        return this.maxSpeed;
+    }
+    
+    public void setMaxSpeed(int myMaxSpeed){
+        this.maxSpeed = myMaxSpeed;
     }
     
     int powerConsumed(int speed){
@@ -19,9 +26,5 @@ public class Locomotor extends Component{
         return totalPower;
     }
     
-    @Override
-    void printSpecs()
-    {
-        System.out.println(this.myName);
-    }
+    
 }
