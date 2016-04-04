@@ -154,8 +154,8 @@ public class RRSCLIPartManager {
         double Tweight = CLIinput.getDouble("Enter Weight ##.##");
         double Tprice = CLIinput.getDouble("Enter Price");
         String Tdescription = CLIinput.getString("Enter Description");
-        char Tobsolete = CLIinput.getChar("Is this an Obsolete part (Y/N)");
-        char Tapproved = CLIinput.getChar("Has this part been Approved (Y/N)");
+        boolean Tobsolete = CLIinput.getBoolean("Is this an Obsolete part (Y/N)");
+        boolean Tapproved = CLIinput.getBoolean("Has this part been Approved (Y/N)");
         System.out.println("Is this information correct?");
         System.out.println(Tname);
         System.out.println(Tweight);
@@ -174,85 +174,124 @@ public class RRSCLIPartManager {
     }
     
     public static void newBattery(){
-        // Create new battery here
-//        get String name;
-//        Show Users Input
-//        get double weight;
-//        Show Users Input
-//        get double price;
-//        Show Users Input
-//        get String description;
-//        Show Users Input
-//        get boolean approved;
-//        Show Users Input
-//        get boolean obsolete;
-//        Show Users Input
-//        get double energy;
-//        Show Users Input
-//        get double maxPower;
-//        Show Users Input
-// TODO creat new part with users variables
-// Display part record for verification
-// edit if needed
+        RRSCLI.clearScreen();
+        RRSCLI.printTitle();
+        System.out.println("====New Battery Creator====");
+        System.out.println("");
+        String Bname = CLIinput.getString("Enter Name");
+        double Bweight = CLIinput.getDouble("Enter Weight ##.##");
+        double Bprice = CLIinput.getDouble("Enter Price");
+        String Bdescription = CLIinput.getString("Enter Description");
+        boolean Bobsolete = CLIinput.getBoolean("Is this an Obsolete part (Y/N)");
+        boolean Bapproved = CLIinput.getBoolean("Has this part been Approved (Y/N)");
+        double Benergy = CLIinput.getDouble("How much Energy does this battery have ##.##");
+        double BmaxPower = CLIinput.getDouble("What is this batteries Max Power rating ##.##");
+        System.out.println("Is this information correct?");
+        System.out.println(Bname);
+        System.out.println(Bweight);
+        System.out.println(Bprice);
+        System.out.println(Bdescription);
+        System.out.println(Bobsolete);
+        System.out.println(Bapproved);
+        System.out.println(Benergy);
+        System.out.println(BmaxPower);
+        System.out.println("");
+        int input = CLIinput.getChar(" (C)reate part or E(x)it ");
+        if (input == 'C' || input == 'c'){
+            Shop.createBattery(Bname, Bweight, Bprice, Bdescription, Bobsolete, Bapproved, Benergy, BmaxPower);
+        }
+        else if (input == 'X' || input == 'x'){
+            return;
+        }
    }
     
     public static void newHead(){
-        // Create new head here
-//        String name;
-//        Show Users Input
-//        double weight;
-//        Show Users Input
-//        double price;
-//        Show Users Input
-//        String description;
-//        Show Users Input
-//        boolean approved;
-//        Show Users Input
-//        boolean obsolete;
-//        Show Users Input
-// TODO creat new part with users variables
-// Display part record for verification
-// edit if needed
-
+        RRSCLI.clearScreen();
+        RRSCLI.printTitle();
+        System.out.println("====New Head Creator====");
+        System.out.println("");
+        String Hname = CLIinput.getString("Enter Name");
+        double Hweight = CLIinput.getDouble("Enter Weight ##.##");
+        double Hprice = CLIinput.getDouble("Enter Price");
+        String Hdescription = CLIinput.getString("Enter Description");
+        boolean Hobsolete = CLIinput.getBoolean("Is this an Obsolete part (Y/N)");
+        boolean Happroved = CLIinput.getBoolean("Has this part been Approved (Y/N)");
+        System.out.println("Is this information correct?");
+        System.out.println(Hname);
+        System.out.println(Hweight);
+        System.out.println(Hprice);
+        System.out.println(Hdescription);
+        System.out.println(Hobsolete);
+        System.out.println(Happroved);
+        System.out.println("");
+        int input = CLIinput.getChar(" (C)reate part or E(x)it ");
+        if (input == 'C' || input == 'c'){
+            Shop.createHead(Hname, Hweight, Hprice, Hdescription, Hobsolete, Happroved);
+        }
+        else if (input == 'X' || input == 'x'){
+            return;
+        }
     }
     
     public static void newArm(){
-        // Create new arm here
-//        String name;
-//        Show Users Input
-//        double weight;
-//        Show Users Input
-//        double price;
-//        Show Users Input
-//        String description;
-//        Show Users Input
-//        boolean approved;
-//        Show Users Input
-//        boolean obsolete;
-//        Show Users Input
-// TODO creat new part with users variables
-// Display part record for verification
-// edit if needed
-
+        RRSCLI.clearScreen();
+        RRSCLI.printTitle();
+        System.out.println("====New Arm Creator====");
+        System.out.println("");
+        String Aname = CLIinput.getString("Enter Name");
+        double Aweight = CLIinput.getDouble("Enter Weight ##.##");
+        double Aprice = CLIinput.getDouble("Enter Price");
+        String Adescription = CLIinput.getString("Enter Description");
+        boolean Aobsolete = CLIinput.getBoolean("Is this an Obsolete part (Y/N)");
+        boolean Aapproved = CLIinput.getBoolean("Has this part been Approved (Y/N)");
+        double ApowerConsumption = CLIinput.getDouble("What is this Arms Power Consumtion Rate ##.##");
+        System.out.println("Is this information correct?");
+        System.out.println(Aname);
+        System.out.println(Aweight);
+        System.out.println(Aprice);
+        System.out.println(Adescription);
+        System.out.println(Aobsolete);
+        System.out.println(Aapproved);
+        System.out.println(ApowerConsumption);
+        System.out.println("");
+        int input = CLIinput.getChar(" (C)reate part or E(x)it ");
+        if (input == 'C' || input == 'c'){
+            Shop.createArm(Aname, Aweight, Aprice, Adescription, Aobsolete, Aapproved, ApowerConsumption);
+        }
+        else if (input == 'X' || input == 'x'){
+            return;
+        }
     }
     
     public static void newLocomotor(){
-        // Create new locomotor here
-//        String name;
-//        Show Users Input
-//        double weight;
-//        Show Users Input
-//        double price;
-//        Show Users Input
-//        String description;
-//        Show Users Input
-//        boolean approved;
-//        Show Users Input
-//        boolean obsolete;
-//        Show Users Input
-// TODO creat new part with users variables
-// Display part record for verification
-// edit if needed
-
+        RRSCLI.clearScreen();
+        RRSCLI.printTitle();
+        System.out.println("====New Torso Creator===");
+        System.out.println("");
+        String Lname = CLIinput.getString("Enter Name");
+        double Lweight = CLIinput.getDouble("Enter Weight ##.##");
+        double Lprice = CLIinput.getDouble("Enter Price");
+        String Ldescription = CLIinput.getString("Enter Description");
+        boolean Lobsolete = CLIinput.getBoolean("Is this an Obsolete part (Y/N)");
+        boolean Lapproved = CLIinput.getBoolean("Has this part been Approved (Y/N)");
+        double LmaxSpeed = CLIinput.getDouble("What is the Max Speed of this Locomotor ##.##");
+        double LpowerConsumed = CLIinput.getDouble("How power does this Locomotor Consume ##.##");
+        System.out.println("Is this information correct?");
+        System.out.println(Lname);
+        System.out.println(Lweight);
+        System.out.println(Lprice);
+        System.out.println(Ldescription);
+        System.out.println(Lobsolete);
+        System.out.println(Lapproved);
+        System.out.println(LmaxSpeed);
+        System.out.println(LpowerConsumed);
+        System.out.println("");
+        int input = CLIinput.getChar(" (C)reate part or E(x)it ");
+        if (input == 'C' || input == 'c'){
+            Shop.createLocomotor(Lname, Lweight, Lprice, Ldescription, Lobsolete, Lapproved, LmaxSpeed, LpowerConsumed);
+        }
+        else if (input == 'X' || input == 'x'){
+            return;
+        }
     }
 }
