@@ -21,7 +21,7 @@ public class Locomotor extends Component{
         this.maxSpeed = myMaxSpeed;
     }
     
-    int powerConsumed(int speed){
+    public int powerConsumed(int speed){
         int totalPower = 0;
         return totalPower;
     }

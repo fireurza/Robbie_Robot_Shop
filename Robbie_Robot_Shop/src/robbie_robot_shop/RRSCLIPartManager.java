@@ -17,19 +17,23 @@ public class RRSCLIPartManager {
         RRSCLI.printTitle();
         System.out.println("======Part Manager======");
         System.out.println("");
-        //System.out.println("(V)iew Part");
+        System.out.println("(S)earch Parts");
+        System.out.println("(B)rowse Parts");
+        System.out.println("(E)dit Part");
         System.out.println("(N)ew part");
-        //System.out.println("(E)dit Part");
         System.out.println("E(x)it");
         int input = CLIinput.getChar(" Select Option ");
-        if (input == 'V' || input == 'v'){
-            viewPart();
+        if (input == 'S' || input == 's'){
+            searchParts();
         }
-        else if (input == 'N' || input == 'n'){
-            newPart();
+        if (input == 'B' || input == 'b'){
+            browseParts();
         }
         else if (input == 'E' || input == 'e'){
             editPart();
+        }
+        else if (input == 'N' || input == 'n'){
+            newPart();
         }
         else if (input == 'X' || input == 'x'){
             exit = true;
@@ -40,30 +44,32 @@ public class RRSCLIPartManager {
         }while(!exit);
     }
 
-    public static void viewPart(){
-        boolean exit = false;
-        do{
-        RRSCLI.clearScreen();
-        RRSCLI.printTitle();
-        System.out.println("=======View Part========");
-        System.out.println("");
-        //System.out.println("(B)rowse");
-        //System.out.println("(S)earch");
-        System.out.println("E(x)it");
-        int input = CLIinput.getChar(" Select Option ");
-        if (input == 'B' || input == 'b'){
-            browseParts();
-        }
-        else if (input == 'S' || input == 's'){
-            searchParts();
-        }
-        else if (input == 'X' || input == 'x'){
-            exit = true;
-        }
-        else{
-            System.out.println("Unrecognized Input");
-        }
-        }while(!exit);
+    public static void viewPart(int partNumber){
+        // Display part information on screen
+        
+//        boolean exit = false;
+//        do{
+//        RRSCLI.clearScreen();
+//        RRSCLI.printTitle();
+//        System.out.println("=======View Part========");
+//        System.out.println("");
+//        //System.out.println("(B)rowse");
+//        //System.out.println("(S)earch");
+//        System.out.println("E(x)it");
+//        int input = CLIinput.getChar(" Select Option ");
+//        if (input == 'B' || input == 'b'){
+//            browseParts();
+//        }
+//        else if (input == 'S' || input == 's'){
+//            searchParts();
+//        }
+//        else if (input == 'X' || input == 'x'){
+//            exit = true;
+//        }
+//        else{
+//            System.out.println("Unrecognized Input");
+//        }
+//        }while(!exit);
     }
 
     public static void newPart(){
@@ -111,79 +117,128 @@ public class RRSCLIPartManager {
         RRSCLI.printTitle();
         System.out.println("======Part Editor=======");
         System.out.println("");
+        System.out.println("Enter part number");
         System.out.println("E(x)it");
         int input = CLIinput.getChar(" Select Option ");
         if (input == 'X' || input == 'x'){
             exit = true;
         }
+        // TODO Part Number Lookup
+        // viewPart(input);
         else{
-            System.out.println("Unrecognized Input");
+            System.out.println("Unrecognized Part Number");
         }
         }while(!exit);
     }
     
     public static void browseParts(){
-        
+        // TODO Display Parts
     }
         
     public static void searchParts(){
-        
+        // TODO Search Through Parts
     }
     
     public static void newTorso(){
         // Create new Torso here
 //        String name;
+//        Show Users Input
 //        double weight;
+//        Show Users Input
 //        double price;
+//        Show Users Input
 //        String description;
+//        Show Users Input
 //        boolean approved;
+//        Show Users Input
 //        boolean obsolete;
+//        Show Users Input
+// TODO creat new part with users variables
+// Display part record for verification
+// edit if needed
+
     }
     
     public static void newBattery(){
         // Create new battery here
-//        String name;
-//        double weight;
-//        double price;
-//        String description;
-//        boolean approved;
-//        boolean obsolete;
-//        double energy;
-//        double maxPower;
-       
+//        get String name;
+//        Show Users Input
+//        get double weight;
+//        Show Users Input
+//        get double price;
+//        Show Users Input
+//        get String description;
+//        Show Users Input
+//        get boolean approved;
+//        Show Users Input
+//        get boolean obsolete;
+//        Show Users Input
+//        get double energy;
+//        Show Users Input
+//        get double maxPower;
+//        Show Users Input
+// TODO creat new part with users variables
+// Display part record for verification
+// edit if needed
    }
     
     public static void newHead(){
         // Create new head here
 //        String name;
+//        Show Users Input
 //        double weight;
+//        Show Users Input
 //        double price;
+//        Show Users Input
 //        String description;
+//        Show Users Input
 //        boolean approved;
+//        Show Users Input
 //        boolean obsolete;
+//        Show Users Input
+// TODO creat new part with users variables
+// Display part record for verification
+// edit if needed
+
     }
     
     public static void newArm(){
         // Create new arm here
 //        String name;
+//        Show Users Input
 //        double weight;
+//        Show Users Input
 //        double price;
+//        Show Users Input
 //        String description;
+//        Show Users Input
 //        boolean approved;
+//        Show Users Input
 //        boolean obsolete;
+//        Show Users Input
+// TODO creat new part with users variables
+// Display part record for verification
+// edit if needed
+
     }
     
     public static void newLocomotor(){
         // Create new locomotor here
 //        String name;
+//        Show Users Input
 //        double weight;
+//        Show Users Input
 //        double price;
+//        Show Users Input
 //        String description;
+//        Show Users Input
 //        boolean approved;
+//        Show Users Input
 //        boolean obsolete;
-    }
-    
-    public static void main(String[] args){
-        partManager();
+//        Show Users Input
+// TODO creat new part with users variables
+// Display part record for verification
+// edit if needed
+
     }
 }

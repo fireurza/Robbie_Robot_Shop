@@ -10,10 +10,24 @@
  */
 package robbie_robot_shop;
 
+import java.io.IOException;
 /**
  *
  */
 public class CLIinput {
+    
+    public static int getInt(String userInput){
+        while(true){
+            flushInput();
+            printInputPrompt(userInput);
+            try{
+                return Integer.valueOf(inString().trim()).intValue();
+            }
+            catch (NumberFormatException e){
+                System.out.println("Invalid Input. Not An Integer");
+            }
+        }
+    }
     
     public static char getChar(String userInput){
         int inputChar = 0;
@@ -50,5 +64,46 @@ public class CLIinput {
     public static void printInputPrompt(String inputPrompt){
         System.out.println(inputPrompt + " ");
         System.out.flush();
+    }
+    
+    public static String getString(String userInput){
+        flushInput();
+        printInputPrompt(userInput);
+        return userInput;
+    }
+    
+    public static String inString(){
+        int inputChar;
+        String returnString = "";
+        boolean finished = false;
+        
+        while (!finished){
+            try{
+                inputChar = System.in.read();
+                if (inputChar < 0 || (char) inputChar == '\n'){
+                    finished = true;
+                }
+                else if ((char) inputChar != '\r')
+                    returnString = returnString + (char) inputChar; // Enter into string
+            }
+            catch (java.io.IOException e){
+                System.out.println("Input Error");
+                finished = true;
+            }
+        }
+        return returnString;
+    }
+    
+    public static double getDouble(String userInput){
+        while(true){
+            flushInput();
+            printInputPrompt(userInput);
+            try{
+                return Double.valueOf(inString().trim()).doubleValue();
+            }
+            catch (NumberFormatException e){
+                System.out.println("Invalid Input. Not A Floating Point Number");
+            }
+        }
     }
 }

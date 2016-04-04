@@ -10,7 +10,7 @@ import java.util.Formatter;
 
 public class RRSCLI {
     
-    public static void main() throws IOException{
+    public static void main(String[] args) throws IOException{
         boolean exit = false;
         
         // Check for Persistant Files
