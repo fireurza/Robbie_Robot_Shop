@@ -4,27 +4,27 @@
  */
 package robbie_robot_shop;
 
-import java.io.File;
+//import java.io.File;
 import java.io.IOException;
-import java.util.Formatter;
+//import java.util.Formatter;
 
 public class RRSCLI {
     
     public static void main(String[] args) throws IOException{
         boolean exit = false;
         
-        // Check for Persistant Files
-        try {
-            Formatter fParts = new Formatter("RRS_Parts");
-            Formatter fModels = new Formatter("RRS_Models");
-            Formatter fOrders = new Formatter("RRS_Orders");
-            Formatter fCustomers = new Formatter("RRS_Customers");
-            Formatter fEmployees = new Formatter("RRS_Employees");
-            
-        }
-        catch (Exception e) {
-            System.out.println("File Handling Failure: " + e.getMessage());
-        }
+//        // Check for Persistant Files
+//        try {
+//            Formatter fParts = new Formatter("RRS_Parts");
+//            Formatter fModels = new Formatter("RRS_Models");
+//            Formatter fOrders = new Formatter("RRS_Orders");
+//            Formatter fCustomers = new Formatter("RRS_Customers");
+//            Formatter fEmployees = new Formatter("RRS_Employees");
+//            
+//        }
+//        catch (Exception e) {
+//            System.out.println("File Handling Failure: " + e.getMessage());
+//        }
         
         do{
         clearScreen();
@@ -65,7 +65,7 @@ public class RRSCLI {
         }
         }while(!exit);
         // Close all Formatters
-        //fParts.close();
+//        fParts.close();
         
         
         }

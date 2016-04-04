@@ -69,7 +69,8 @@ public class CLIinput {
     public static String getString(String userInput){
         flushInput();
         printInputPrompt(userInput);
-        return userInput;
+        String additionalInput = inString();
+        return additionalInput;
     }
     
     public static String inString(){
