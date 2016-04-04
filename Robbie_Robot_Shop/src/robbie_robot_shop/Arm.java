@@ -13,7 +13,7 @@ public class Arm extends Component{
         super();   
     }
     
-    int powerConsumed(int speed){
+    public int powerConsumed(int speed){
         int totalConsumed = 0;
         return totalConsumed;
     }
