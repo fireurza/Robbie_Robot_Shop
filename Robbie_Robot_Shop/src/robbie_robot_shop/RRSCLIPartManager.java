@@ -156,6 +156,8 @@ public class RRSCLIPartManager {
         String Tdescription = CLIinput.getString("Enter Description");
         boolean Tobsolete = CLIinput.getBoolean("Is this an Obsolete part (Y/N)");
         boolean Tapproved = CLIinput.getBoolean("Has this part been Approved (Y/N)");
+        int TbatteryCompartments = CLIinput.getInt("How many Battery Compartments does it have");
+        int TarmSockets = CLIinput.getInt("How many Arm Sockets does it have");
         System.out.println("Is this information correct?");
         System.out.println(Tname);
         System.out.println(Tweight);
@@ -163,13 +165,19 @@ public class RRSCLIPartManager {
         System.out.println(Tdescription);
         System.out.println(Tobsolete);
         System.out.println(Tapproved);
+        System.out.println(TbatteryCompartments);
+        System.out.println(TarmSockets);
         System.out.println("");
         int input = CLIinput.getChar(" (C)reate part or E(x)it ");
         if (input == 'C' || input == 'c'){
-            Shop.createTorso(Tname, Tweight, Tprice, Tdescription, Tobsolete, Tapproved);
+            Torso T1 = Shop.createTorso(Tname, Tweight, Tprice, Tdescription, Tobsolete, Tapproved, TbatteryCompartments, TarmSockets);
+            //TODO Save T1 to file
         }
         else if (input == 'X' || input == 'x'){
             return;
+        }
+        else {
+            System.out.println("Unrecognized input: Default action E(x)it");
         }
     }
     
@@ -198,10 +206,14 @@ public class RRSCLIPartManager {
         System.out.println("");
         int input = CLIinput.getChar(" (C)reate part or E(x)it ");
         if (input == 'C' || input == 'c'){
-            Shop.createBattery(Bname, Bweight, Bprice, Bdescription, Bobsolete, Bapproved, Benergy, BmaxPower);
+            Battery B1 = Shop.createBattery(Bname, Bweight, Bprice, Bdescription, Bobsolete, Bapproved, Benergy, BmaxPower);
+            //TODO Save B1 to file
         }
         else if (input == 'X' || input == 'x'){
             return;
+        }
+        else {
+            System.out.println("Unrecognized input: Default action E(x)it");
         }
    }
     
@@ -226,10 +238,14 @@ public class RRSCLIPartManager {
         System.out.println("");
         int input = CLIinput.getChar(" (C)reate part or E(x)it ");
         if (input == 'C' || input == 'c'){
-            Shop.createHead(Hname, Hweight, Hprice, Hdescription, Hobsolete, Happroved);
+            Head H1 = Shop.createHead(Hname, Hweight, Hprice, Hdescription, Hobsolete, Happroved);
+            //TODO Save H1 to file
         }
         else if (input == 'X' || input == 'x'){
             return;
+        }
+        else {
+            System.out.println("Unrecognized input: Default action E(x)it");
         }
     }
     
@@ -256,10 +272,14 @@ public class RRSCLIPartManager {
         System.out.println("");
         int input = CLIinput.getChar(" (C)reate part or E(x)it ");
         if (input == 'C' || input == 'c'){
-            Shop.createArm(Aname, Aweight, Aprice, Adescription, Aobsolete, Aapproved, ApowerConsumption);
+            Arm A1 = Shop.createArm(Aname, Aweight, Aprice, Adescription, Aobsolete, Aapproved, ApowerConsumption);
+            // TODO Save A1 to file
         }
         else if (input == 'X' || input == 'x'){
             return;
+        }
+        else {
+            System.out.println("Unrecognized input: Default action E(x)it");
         }
     }
     
@@ -288,10 +308,14 @@ public class RRSCLIPartManager {
         System.out.println("");
         int input = CLIinput.getChar(" (C)reate part or E(x)it ");
         if (input == 'C' || input == 'c'){
-            Shop.createLocomotor(Lname, Lweight, Lprice, Ldescription, Lobsolete, Lapproved, LmaxSpeed, LpowerConsumed);
+            Locomotor L1 = Shop.createLocomotor(Lname, Lweight, Lprice, Ldescription, Lobsolete, Lapproved, LmaxSpeed, LpowerConsumed);
+            // TODO Save L1 to file
         }
         else if (input == 'X' || input == 'x'){
             return;
+        }
+        else {
+            System.out.println("Unrecognized input: Default action E(x)it");
         }
     }
 }
