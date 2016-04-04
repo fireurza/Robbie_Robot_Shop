@@ -13,9 +13,17 @@ public class Arm extends Component{
         super();   
     }
     
-    public int powerConsumed(int speed){
-        int totalConsumed = 0;
-        return totalConsumed;
+    public void setPowerConsumptionRate(double myPowerConsumptionRate){
+        this.powerConsumptionRate = myPowerConsumptionRate;
+    }
+    
+    public double getPowerConsumptionRate(){
+        return this.powerConsumptionRate;
+    }
+    
+    public double powerConsumptionRate(int speed){
+        double powerConsumed = this.powerConsumptionRate * speed;
+        return powerConsumed;
     }
     
     
