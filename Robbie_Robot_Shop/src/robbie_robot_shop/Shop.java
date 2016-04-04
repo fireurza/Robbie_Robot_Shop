@@ -1,5 +1,10 @@
 package robbie_robot_shop;
 
+import java.io.IOException;
+import java.io.File;
+import java.io.FileWriter;
+import java.util.Formatter;
+
 /**
  *
  * @author Gasser
@@ -30,6 +35,19 @@ public class Shop {
         T1.setApproved(Tapproved);
         T1.setBatteryCompartments(TbatteryCompartments);
         T1.setArmSockets(TarmSockets);
+        int partNumber = Component.getNumberOfParts();
+        T1.setPartNumber(partNumber);
+        Component.setNumberOfParts(partNumber + 1);
+        //TODO Open File, Append T1, CLose File
+        try{
+            FileWriter f = new FileWriter("RRS_Parts", true);
+            Formatter fParts = new Formatter(f);
+            fParts.format("%s,%i,%s,%d,%d,%s,%b,%b,%i,%i", Tname, partNumber, "Torso", Tweight, Tprice, Tdescription, Tobsolete, Tapproved, TbatteryCompartments, TarmSockets);
+            fParts.close();
+        }
+        catch (Exception e){
+            System.out.println("File Handling Failure: " + e.getMessage());
+        }
         return T1;
     }
     public static Locomotor createLocomotor(String Lname, double Lweight, double Lprice, String Ldescription, boolean Lobsolete, boolean Lapproved, double LmaxSpeed, double LpowerConsumptionRate){
@@ -43,6 +61,9 @@ public class Shop {
         L1.setApproved(Lapproved);
         L1.setMaxSpeed(LmaxSpeed);
         L1.setPowerConsumptionRate(LpowerConsumptionRate);
+        int partNumber = Component.getNumberOfParts();
+        L1.setPartNumber(partNumber);
+        Component.setNumberOfParts(partNumber + 1);
         return L1;
     }
     public static Battery createBattery(String Bname, double Bweight, double Bprice, String Bdescription, boolean Bobsolete, boolean Bapproved, double Benergy, double BmaxPower){
@@ -56,6 +77,9 @@ public class Shop {
         B1.setApproved(Bapproved);
         B1.setEnergy(Benergy);
         B1.setMaxPower(BmaxPower);
+        int partNumber = Component.getNumberOfParts();
+        B1.setPartNumber(partNumber);
+        Component.setNumberOfParts(partNumber + 1);
         return B1;
     }
     public static Head createHead(String Hname, double Hweight, double Hprice, String Hdescription, boolean Hobsolete, boolean Happroved){
@@ -67,6 +91,9 @@ public class Shop {
         H1.setDescription(Hdescription);
         H1.setObsolete(Hobsolete);
         H1.setApproved(Happroved);
+        int partNumber = Component.getNumberOfParts();
+        H1.setPartNumber(partNumber);
+        Component.setNumberOfParts(partNumber + 1);
         return H1;
     }
     public static Arm createArm(String Aname, double Aweight, double Aprice, String Adescription, boolean Aobsolete, boolean Aapproved, double ApowerConsumptionRate){
@@ -79,6 +106,9 @@ public class Shop {
         A1.setObsolete(Aobsolete);
         A1.setApproved(Aapproved);
         A1.setPowerConsumptionRate(ApowerConsumptionRate);
+        int partNumber = Component.getNumberOfParts();
+        A1.setPartNumber(partNumber);
+        Component.setNumberOfParts(partNumber + 1);
         return A1;
     }
     

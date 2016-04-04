@@ -34,6 +34,10 @@ public abstract class Component {
     }
     
     //Getters for viewing information
+    public static int getNumberOfParts(){
+        return numberOfParts;
+    }
+    
     public String getName(){
         return this.name;
     }
@@ -63,6 +67,10 @@ public abstract class Component {
     }
     
     // Setters for editing information
+    public static void setNumberOfParts(int myNumberOfParts){
+        numberOfParts = myNumberOfParts;
+    }
+    
     public void setName(String myName){
         this.name = myName;
     }
