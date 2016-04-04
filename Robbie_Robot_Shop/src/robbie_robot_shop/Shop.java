@@ -19,39 +19,39 @@ public class Shop {
     
     // Utility methods
     
-    public void createPart(){
+    public static void createTorso(String name, double weight, double price, String description, char obsolete, char approved){
     
     }
     
-    public void editPart(){
+    public static void editPart(){
         
     }
     
-    public void createModel(){
+    public static void createModel(){
     
     }
     
-    public void editModel(){
+    public static void editModel(){
     
     }
     
-    public void newCustomer(){
+    public static void newCustomer(){
     
     }
     
-    public void editCustomer(){
+    public static void editCustomer(){
         
     }
     
-    void placeOrder(){
+    public static void placeOrder(){
     
     }
     
-    void runReport(){
+    public static void runReport(){
     
     }
     
-    void save(){
+    public static void save(){
     
     }
 }

@@ -133,30 +133,44 @@ public class RRSCLIPartManager {
     
     public static void browseParts(){
         // TODO Display Parts
+            // Open part file
+            // display contents
+            // give options to sort by different categories
     }
         
     public static void searchParts(){
         // TODO Search Through Parts
+            // open part file
+            // give option to search by category and give input
+            // display items corresponing to input
     }
     
     public static void newTorso(){
-        // Create new Torso here
-//        String name;
-//        Show Users Input
-//        double weight;
-//        Show Users Input
-//        double price;
-//        Show Users Input
-//        String description;
-//        Show Users Input
-//        boolean approved;
-//        Show Users Input
-//        boolean obsolete;
-//        Show Users Input
-// TODO creat new part with users variables
-// Display part record for verification
-// edit if needed
-
+        RRSCLI.clearScreen();
+        RRSCLI.printTitle();
+        System.out.println("====New Torso Creator===");
+        System.out.println("");
+        String Tname = CLIinput.getString("Enter Name");
+        double Tweight = CLIinput.getDouble("Enter Weight ##.##");
+        double Tprice = CLIinput.getDouble("Enter Price");
+        String Tdescription = CLIinput.getString("Enter Description");
+        char Tobsolete = CLIinput.getChar("Is this an Obsolete part (Y/N)");
+        char Tapproved = CLIinput.getChar("Has this part been Approved (Y/N)");
+        System.out.println("Is this information correct?");
+        System.out.println(Tname);
+        System.out.println(Tweight);
+        System.out.println(Tprice);
+        System.out.println(Tdescription);
+        System.out.println(Tobsolete);
+        System.out.println(Tapproved);
+        System.out.println("");
+        int input = CLIinput.getChar(" (C)reate part or E(x)it ");
+        if (input == 'C' || input == 'c'){
+            Shop.createTorso(Tname, Tweight, Tprice, Tdescription, Tobsolete, Tapproved);
+        }
+        else if (input == 'X' || input == 'x'){
+            return;
+        }
     }
     
     public static void newBattery(){
