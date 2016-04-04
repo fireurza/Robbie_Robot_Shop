@@ -107,4 +107,20 @@ public class CLIinput {
             }
         }
     }
+    
+    public static boolean getBoolean(String userInput){
+        boolean output;
+        char iChar = getChar(userInput);
+        if (iChar == 'Y' || iChar == 'y' || iChar == '1' || iChar == 'T' || iChar == 't'){
+            output = true;
+        }
+        else if (iChar == 'N' || iChar == 'n' || iChar == '0' || iChar == 'F' || iChar == 'f'){
+            output = false;
+        }
+        else {
+            System.out.println("Unable to determine input: Default boolean = false");
+            output = false;
+        }
+        return output;
+    } 
 }
