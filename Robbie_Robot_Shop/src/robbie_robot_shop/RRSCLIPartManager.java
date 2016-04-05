@@ -132,10 +132,14 @@ public class RRSCLIPartManager {
     }
     
     public static void browseParts(){
-        // TODO Display Parts
-            // Open part file
-            // display contents
-            // give options to sort by different categories
+        
+        RRSCLI.clearScreen();
+        RRSCLI.printTitle();
+        Shop.createHead("Android", 1, 1, "a", true, true);          // Temporary hard coded parts
+        Shop.createTorso("Barrel", 0, 0, "a", true, true, 0, 0);    // Temporary hard coded parts
+        System.out.println("======Part Manager======");
+        System.out.println("");
+        printAllComponents();
     }
         
     public static void searchParts(){
@@ -170,7 +174,7 @@ public class RRSCLIPartManager {
         System.out.println("");
         int input = CLIinput.getChar(" (C)reate part or E(x)it ");
         if (input == 'C' || input == 'c'){
-            Torso T1 = Shop.createTorso(Tname, Tweight, Tprice, Tdescription, Tobsolete, Tapproved, TbatteryCompartments, TarmSockets);
+            Shop.createTorso(Tname, Tweight, Tprice, Tdescription, Tobsolete, Tapproved, TbatteryCompartments, TarmSockets);
             //TODO Save T1 to file
         }
         else if (input == 'X' || input == 'x'){
@@ -206,7 +210,7 @@ public class RRSCLIPartManager {
         System.out.println("");
         int input = CLIinput.getChar(" (C)reate part or E(x)it ");
         if (input == 'C' || input == 'c'){
-            Battery B1 = Shop.createBattery(Bname, Bweight, Bprice, Bdescription, Bobsolete, Bapproved, Benergy, BmaxPower);
+            Shop.createBattery(Bname, Bweight, Bprice, Bdescription, Bobsolete, Bapproved, Benergy, BmaxPower);
             //TODO Save B1 to file
         }
         else if (input == 'X' || input == 'x'){
@@ -238,7 +242,7 @@ public class RRSCLIPartManager {
         System.out.println("");
         int input = CLIinput.getChar(" (C)reate part or E(x)it ");
         if (input == 'C' || input == 'c'){
-            Head H1 = Shop.createHead(Hname, Hweight, Hprice, Hdescription, Hobsolete, Happroved);
+            Shop.createHead(Hname, Hweight, Hprice, Hdescription, Hobsolete, Happroved);
             //TODO Save H1 to file
         }
         else if (input == 'X' || input == 'x'){
@@ -272,7 +276,7 @@ public class RRSCLIPartManager {
         System.out.println("");
         int input = CLIinput.getChar(" (C)reate part or E(x)it ");
         if (input == 'C' || input == 'c'){
-            Arm A1 = Shop.createArm(Aname, Aweight, Aprice, Adescription, Aobsolete, Aapproved, ApowerConsumption);
+            Shop.createArm(Aname, Aweight, Aprice, Adescription, Aobsolete, Aapproved, ApowerConsumption);
             // TODO Save A1 to file
         }
         else if (input == 'X' || input == 'x'){
@@ -308,7 +312,7 @@ public class RRSCLIPartManager {
         System.out.println("");
         int input = CLIinput.getChar(" (C)reate part or E(x)it ");
         if (input == 'C' || input == 'c'){
-            Locomotor L1 = Shop.createLocomotor(Lname, Lweight, Lprice, Ldescription, Lobsolete, Lapproved, LmaxSpeed, LpowerConsumed);
+            Shop.createLocomotor(Lname, Lweight, Lprice, Ldescription, Lobsolete, Lapproved, LmaxSpeed, LpowerConsumed);
             // TODO Save L1 to file
         }
         else if (input == 'X' || input == 'x'){
@@ -318,4 +322,46 @@ public class RRSCLIPartManager {
             System.out.println("Unrecognized input: Default action E(x)it");
         }
     }
-}
+    
+    private static void printAllComponents()
+    {
+        Component[][] ArrayOfParts = Shop.robotParts; 
+        Component[] Heads = ArrayOfParts[0];
+        Component[] Torso = ArrayOfParts[1];
+        Component[] Arm = ArrayOfParts[2];
+        Component[] Battery = ArrayOfParts[3];
+        Component[] Locomotor = ArrayOfParts[4];
+        
+        String name = "";
+        
+        for(int i = 0; i<5; i++)
+        {
+            switch(i){
+                case 0: 
+                    name = "Heads";
+                    break;
+                case 1:
+                    name = "Torsos";
+                    break;
+                case 2:
+                    name = "Arms";
+                    break;
+                case 3:
+                    name = "Batterys";
+                    break;
+                case 4:
+                    name = "Locomotors";
+                    break;          
+            }
+            
+            System.out.println(name);
+            System.out.println("--------");
+            
+            for(int j = 0; j<ArrayOfParts[i].length; j++)
+            {
+                if(ArrayOfParts[i][j] != null)
+                System.out.println(ArrayOfParts[i][j].getName());
+            }
+            System.out.println("\n");
+        }
+}}
