@@ -45,31 +45,7 @@ public class RRSCLIPartManager {
     }
 
     public static void viewPart(int partNumber){
-        // Display part information on screen
-        
-//        boolean exit = false;
-//        do{
-//        RRSCLI.clearScreen();
-//        RRSCLI.printTitle();
-//        System.out.println("=======View Part========");
-//        System.out.println("");
-//        //System.out.println("(B)rowse");
-//        //System.out.println("(S)earch");
-//        System.out.println("E(x)it");
-//        int input = CLIinput.getChar(" Select Option ");
-//        if (input == 'B' || input == 'b'){
-//            browseParts();
-//        }
-//        else if (input == 'S' || input == 's'){
-//            searchParts();
-//        }
-//        else if (input == 'X' || input == 'x'){
-//            exit = true;
-//        }
-//        else{
-//            System.out.println("Unrecognized Input");
-//        }
-//        }while(!exit);
+ 
     }
 
     public static void newPart(){
@@ -111,35 +87,11 @@ public class RRSCLIPartManager {
     }
     
     public static void editPart(){
-        boolean exit = false;
-        do{
-        RRSCLI.clearScreen();
-        RRSCLI.printTitle();
-        System.out.println("======Part Editor=======");
-        System.out.println("");
-        System.out.println("Enter part number");
-        System.out.println("E(x)it");
-        int input = CLIinput.getChar(" Select Option ");
-        if (input == 'X' || input == 'x'){
-            exit = true;
-        }
-        // TODO Part Number Lookup
-        // viewPart(input);
-        else{
-            System.out.println("Unrecognized Part Number");
-        }
-        }while(!exit);
+
     }
     
     public static void browseParts(){
         
-        RRSCLI.clearScreen();
-        RRSCLI.printTitle();
-        Shop.createHead("Android", 1, 1, "a", true, true);          // Temporary hard coded parts
-        Shop.createTorso("Barrel", 0, 0, "a", true, true, 0, 0);    // Temporary hard coded parts
-        System.out.println("======Part Manager======");
-        System.out.println("");
-        printAllComponents();
     }
         
     public static void searchParts(){
