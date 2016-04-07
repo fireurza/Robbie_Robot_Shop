@@ -17,7 +17,7 @@ public class RRSCLIPartManager {
         RRSCLI.printTitle();
         System.out.println("======Part Manager======");
         System.out.println("");
-        System.out.println("(S)earch Parts");
+//        System.out.println("(S)earch Parts");
         System.out.println("(B)rowse Parts");
         System.out.println("(E)dit Part");
         System.out.println("(N)ew part");
@@ -42,10 +42,6 @@ public class RRSCLIPartManager {
             System.out.println("Unrecognized Input");
         }
         }while(!exit);
-    }
-
-    public static void viewPart(int partNumber){
- 
     }
 
     public static void newPart(){
@@ -91,6 +87,19 @@ public class RRSCLIPartManager {
     }
     
     public static void browseParts(){
+        boolean exit = false;
+        // Display Parts
+        printAllComponents();
+        System.out.println("E(x)it");
+        do{
+        int input = CLIinput.getChar(" Select Option ");
+        if (input == 'X' || input == 'x'){
+            exit = true;
+        }
+        else{
+            System.out.println("Unrecognized Input");
+        }
+        }while(!exit);
         
     }
         
@@ -127,7 +136,6 @@ public class RRSCLIPartManager {
         int input = CLIinput.getChar(" (C)reate part or E(x)it ");
         if (input == 'C' || input == 'c'){
             Shop.createTorso(Tname, Tweight, Tprice, Tdescription, Tobsolete, Tapproved, TbatteryCompartments, TarmSockets);
-            //TODO Save T1 to file
         }
         else if (input == 'X' || input == 'x'){
             return;
@@ -163,7 +171,6 @@ public class RRSCLIPartManager {
         int input = CLIinput.getChar(" (C)reate part or E(x)it ");
         if (input == 'C' || input == 'c'){
             Shop.createBattery(Bname, Bweight, Bprice, Bdescription, Bobsolete, Bapproved, Benergy, BmaxPower);
-            //TODO Save B1 to file
         }
         else if (input == 'X' || input == 'x'){
             return;
@@ -195,7 +202,6 @@ public class RRSCLIPartManager {
         int input = CLIinput.getChar(" (C)reate part or E(x)it ");
         if (input == 'C' || input == 'c'){
             Shop.createHead(Hname, Hweight, Hprice, Hdescription, Hobsolete, Happroved);
-            //TODO Save H1 to file
         }
         else if (input == 'X' || input == 'x'){
             return;
@@ -229,7 +235,6 @@ public class RRSCLIPartManager {
         int input = CLIinput.getChar(" (C)reate part or E(x)it ");
         if (input == 'C' || input == 'c'){
             Shop.createArm(Aname, Aweight, Aprice, Adescription, Aobsolete, Aapproved, ApowerConsumption);
-            // TODO Save A1 to file
         }
         else if (input == 'X' || input == 'x'){
             return;
@@ -265,7 +270,6 @@ public class RRSCLIPartManager {
         int input = CLIinput.getChar(" (C)reate part or E(x)it ");
         if (input == 'C' || input == 'c'){
             Shop.createLocomotor(Lname, Lweight, Lprice, Ldescription, Lobsolete, Lapproved, LmaxSpeed, LpowerConsumed);
-            // TODO Save L1 to file
         }
         else if (input == 'X' || input == 'x'){
             return;
@@ -308,11 +312,16 @@ public class RRSCLIPartManager {
             
             System.out.println(name);
             System.out.println("--------");
-            
+            System.out.println("Part Number, Name, Description");
             for(int j = 0; j<ArrayOfParts[i].length; j++)
             {
-                if(ArrayOfParts[i][j] != null)
-                System.out.println(ArrayOfParts[i][j].getName());
+                if(ArrayOfParts[i][j] != null){
+                System.out.print(ArrayOfParts[i][j].getPartNumber());
+                System.out.print(", ");
+                System.out.print(ArrayOfParts[i][j].getName());
+                System.out.print(", ");
+                System.out.println(ArrayOfParts[i][j].getDescription());
+                }
             }
             System.out.println("\n");
         }

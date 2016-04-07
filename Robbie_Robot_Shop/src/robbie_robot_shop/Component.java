@@ -42,6 +42,9 @@ public abstract class Component {
         return this.partNumber;
     }
     
+    public String getDescription(){
+        return this.description;
+    }
     public String getType(){
         return this.type;
     }
