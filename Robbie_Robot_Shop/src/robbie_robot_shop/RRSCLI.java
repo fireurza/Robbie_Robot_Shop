@@ -50,7 +50,7 @@ public class RRSCLI {
             System.out.println("Unrecognized Input");
         }
         }while(!exit);
-//        IOFile.writeAll();
+//        IOFile.writeComponentFile();
     }
     
     public static void printTitle() {

@@ -37,6 +37,8 @@ public class Shop {
     
     public static void createTorso(String Tname, double Tweight, double Tprice, String Tdescription, boolean Tobsolete, boolean Tapproved, int TbatteryCompartments, int TarmSockets){
         Torso T1 = new Torso();
+        T1.setPartNumber(Component.getNumberOfParts() + 1); 
+        Component.incrementNumberOfParts();
         T1.setType("Torso");
         T1.setName(Tname);
         T1.setWeight(Tweight);
@@ -50,6 +52,8 @@ public class Shop {
     }
     public static void createLocomotor(String Lname, double Lweight, double Lprice, String Ldescription, boolean Lobsolete, boolean Lapproved, double LmaxSpeed, double LpowerConsumptionRate){
         Locomotor L1 = new Locomotor();
+        L1.setPartNumber(Component.getNumberOfParts() + 1);
+        Component.incrementNumberOfParts();
         L1.setType("locomotor");
         L1.setName(Lname);
         L1.setWeight(Lweight);
@@ -63,6 +67,8 @@ public class Shop {
     }
     public static void createBattery(String Bname, double Bweight, double Bprice, String Bdescription, boolean Bobsolete, boolean Bapproved, double Benergy, double BmaxPower){
         Battery B1 = new Battery();
+        B1.setPartNumber(Component.getNumberOfParts() + 1);
+        Component.incrementNumberOfParts();
         B1.setType("battery");
         B1.setName(Bname);
         B1.setWeight(Bweight);
@@ -76,6 +82,8 @@ public class Shop {
     }
     public static void createHead(String Hname, double Hweight, double Hprice, String Hdescription, boolean Hobsolete, boolean Happroved){
         Head H1 = new Head();
+        H1.setPartNumber(Component.getNumberOfParts() + 1);
+        Component.incrementNumberOfParts();
         H1.setType("head");
         H1.setName(Hname);
         H1.setWeight(Hweight);
@@ -87,6 +95,8 @@ public class Shop {
     }
     public static void createArm(String Aname, double Aweight, double Aprice, String Adescription, boolean Aobsolete, boolean Aapproved, double ApowerConsumptionRate){
         Arm A1 = new Arm();
+        A1.setPartNumber(Component.getNumberOfParts() + 1);
+        Component.incrementNumberOfParts();
         A1.setType("arm");
         A1.setName(Aname);
         A1.setWeight(Aweight);
@@ -102,7 +112,7 @@ public class Shop {
         
     }
     
-    public static void createModel(int Torso, int Head, int Arm1, int Arm2, int Locomotor, int Battery1, int Battery2, int Battery3){
+    public static void createModel(int Torso, int Battery1, int Battery2, int Battery3, int Arm1, int Arm2, int Locomotor, int Head){
         
     }
     
