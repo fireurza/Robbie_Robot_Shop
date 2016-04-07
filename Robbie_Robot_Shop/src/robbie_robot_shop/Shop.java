@@ -26,8 +26,8 @@ public class Shop {
     public static int modelCounter = 0;
     
     private static RobotModel[] robotModels=new RobotModel[100];
-    public Customer[] customers=new Customer[100];
-    public SalesAssociate[] salesAssociates=new SalesAssociate[100];
+    private Customer[] customers=new Customer[100];
+    private SalesAssociate[] salesAssociates=new SalesAssociate[100];
     
     // Constructor
     public Shop(){

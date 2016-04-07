@@ -21,7 +21,7 @@ public class Arm extends Component{
         return this.powerConsumptionRate;
     }
     
-    public double powerConsumptionRate(int speed){
+    public double powerConsumed(int speed){
         double powerConsumed = this.powerConsumptionRate * speed;
         return powerConsumed;
     }
