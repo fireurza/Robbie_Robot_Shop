@@ -89,7 +89,10 @@ public class RRSCLIPartManager {
     public static void browseParts(){
         boolean exit = false;
         // Display Parts
-        printAllComponents();
+        for(int i = 0; i<5; i++)
+        {
+            printAllComponents(i);
+        }
         System.out.println("E(x)it");
         do{
         int input = CLIinput.getChar(" Select Option ");
@@ -279,7 +282,7 @@ public class RRSCLIPartManager {
         }
     }
     
-    private static void printAllComponents()
+    public static void printAllComponents(int PartType)
     {
         Component[][] ArrayOfParts = Shop.robotParts; 
         Component[] Heads = ArrayOfParts[0];
@@ -290,9 +293,8 @@ public class RRSCLIPartManager {
         
         String name = "";
         
-        for(int i = 0; i<5; i++)
-        {
-            switch(i){
+        
+            switch(PartType){
                 case 0: 
                     name = "Heads";
                     break;
@@ -307,30 +309,34 @@ public class RRSCLIPartManager {
                     break;
                 case 4:
                     name = "Locomotors";
-                    break;          
+                    break;
+                default:
+                    System.out.println("Unknown Part Category");
+                    return;
             }
             
             System.out.println(name);
             System.out.println("--------");
             System.out.println("Part Number, Name, Description, Weight, Price, Obsolete, Approved");
-            for(int j = 0; j<ArrayOfParts[i].length; j++)
+            for(int j = 0; j<ArrayOfParts[PartType].length; j++)
             {
-                if(ArrayOfParts[i][j] != null){
-                System.out.print(ArrayOfParts[i][j].getPartNumber());
+                if(ArrayOfParts[PartType][j] != null){
+                System.out.print(ArrayOfParts[PartType][j].getPartNumber());
                 System.out.print(", ");
-                System.out.print(ArrayOfParts[i][j].getName());
+                System.out.print(ArrayOfParts[PartType][j].getName());
                 System.out.print(", ");
-                System.out.print(ArrayOfParts[i][j].getDescription());
+                System.out.print(ArrayOfParts[PartType][j].getDescription());
                 System.out.print(", ");
-                System.out.print(ArrayOfParts[i][j].getWeight());
+                System.out.print(ArrayOfParts[PartType][j].getWeight());
                 System.out.print(", ");
-                System.out.print(ArrayOfParts[i][j].getPrice());
+                System.out.print(ArrayOfParts[PartType][j].getPrice());
                 System.out.print(", ");
-                System.out.print(ArrayOfParts[i][j].getIsObsolete());
+                System.out.print(ArrayOfParts[PartType][j].getIsObsolete());
                 System.out.print(", ");
-                System.out.println(ArrayOfParts[i][j].getIsApproved());
+                System.out.println(ArrayOfParts[PartType][j].getIsApproved());
                 }
             }
             System.out.println("\n");
-        }
-}}
+        
+    }
+}

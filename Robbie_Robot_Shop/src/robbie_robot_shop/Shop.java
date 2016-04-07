@@ -18,11 +18,11 @@ public class Shop {
     public static Component[][] robotParts = {HeadArray, TorsoArray, ArmArray, BatteryArray, LocomotorArray};
     
     // Counters to keep track of array indexes
-    private static int headCounter = 0;
-    private static int torsoCounter = 0;
-    private static int armCounter = 0;
-    private static int batteryCounter = 0;
-    private static int locomotorCounter = 0;
+    public static int headCounter = 0;
+    public static int torsoCounter = 0;
+    public static int armCounter = 0;
+    public static int batteryCounter = 0;
+    public static int locomotorCounter = 0;
     
     public RobotModel[] robotModels=new RobotModel[100];
     public Customer[] customers=new Customer[100];
@@ -102,9 +102,11 @@ public class Shop {
         
     }
     
-    public static void createModel(){
-    
+    public static void createModel(int Torso, int Head, int Arm1, int Arm2, int Locomotor, int Battery1, int Battery2, int Battery3){
+        
     }
+    
+    
     
     public static void editModel(){
     

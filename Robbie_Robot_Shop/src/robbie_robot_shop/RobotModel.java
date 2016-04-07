@@ -21,14 +21,16 @@ this.modelNumber=this.modelNumber++;
 this.price=p;
 }  
 
-static double ComponentCost(int modelNumber,double price)
+
+
+static double getComponentCost(int modelNumber,double price)
 {
     return price;
 }
 
-static double maxSpeed(int maxSpeed)
-{
-    return maxSpeed;
-}
+//static double getMaxSpeed()
+//{
+//    return maxSpeed;
+//}
 
 }
