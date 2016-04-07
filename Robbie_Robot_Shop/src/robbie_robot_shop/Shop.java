@@ -23,8 +23,9 @@ public class Shop {
     public static int armCounter = 0;
     public static int batteryCounter = 0;
     public static int locomotorCounter = 0;
+    public static int modelCounter = 0;
     
-    public RobotModel[] robotModels=new RobotModel[100];
+    private static RobotModel[] robotModels=new RobotModel[100];
     public Customer[] customers=new Customer[100];
     public SalesAssociate[] salesAssociates=new SalesAssociate[100];
     
@@ -112,8 +113,18 @@ public class Shop {
         
     }
     
-    public static void createModel(int Torso, int Battery1, int Battery2, int Battery3, int Arm1, int Arm2, int Locomotor, int Head){
-        
+    public static void createModel(String Name, int Torso, int Battery1, int Battery2, int Battery3, int Arm1, int Arm2, int Locomotor, int Head){
+        RobotModel RM = new RobotModel();
+        RM.setName(Name);
+        RM.setTorso(Torso);
+        RM.setBattery1(Battery1);
+        RM.setBattery2(Battery2);
+        RM.setBattery3(Battery3);
+        RM.setArm1(Arm1);
+        RM.setArm2(Arm2);
+        RM.setLocomotor(Locomotor);
+        RM.setHead(Head);
+        robotModels[modelCounter++] = RM;
     }
     
     
@@ -157,6 +168,9 @@ public class Shop {
     }
     public static Locomotor[] getLocomotorArray(){
         return LocomotorArray;
+    }
+    public static RobotModel[] getRobotModels(){
+        return robotModels;
     }
     
 }
