@@ -99,7 +99,7 @@ public int getBattery3(){
 public int getArm1(){
     return this.arm1;
 }
-public int getArms2(){
+public int getArm2(){
     return this.arm2;
 }
 

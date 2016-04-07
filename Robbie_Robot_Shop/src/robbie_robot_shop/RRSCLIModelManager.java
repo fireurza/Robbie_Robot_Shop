@@ -139,7 +139,21 @@ public class RRSCLIModelManager {
     }
     
     public static void browseModels(){
+        boolean exit = false;
+        // Display Parts
+       
+            printAllModels();
         
+        System.out.println("E(x)it");
+        do{
+        int input = CLIinput.getChar(" Select Option ");
+        if (input == 'X' || input == 'x'){
+            exit = true;
+        }
+        else{
+            System.out.println("Unrecognized Input");
+        }
+        }while(!exit);
     }
     
     public static void searchModels(){
@@ -148,5 +162,33 @@ public class RRSCLIModelManager {
     
     public static void viewModel(){
         
+    }
+    
+    public static void printAllModels(){
+        RobotModel[] robotModels = Shop.getRobotModels();
+        System.out.println("Name, Torso, Battery1, Battery2, Battery3, Arm1, Arm2, Locomotor, Head");
+        
+            
+        for(int i = 0; i < Shop.modelCounter; i++){
+            if(robotModels[i] != null){
+                System.out.print(robotModels[i].getName());
+                System.out.print(", ");
+                System.out.print(robotModels[i].getTorso());
+                System.out.print(", ");
+                System.out.print(robotModels[i].getBattery1());
+                System.out.print(", ");
+                System.out.print(robotModels[i].getBattery2());
+                System.out.print(", ");
+                System.out.print(robotModels[i].getBattery3());
+                System.out.print(", ");
+                System.out.print(robotModels[i].getArm1());
+                System.out.print(", ");
+                System.out.print(robotModels[i].getArm2());
+                System.out.print(", ");
+                System.out.print(robotModels[i].getLocomotor());
+                System.out.print(", ");
+                System.out.println(robotModels[i].getHead());
+            }
+        }
     }
 }

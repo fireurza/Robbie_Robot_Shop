@@ -25,7 +25,7 @@ public class Shop {
     public static int locomotorCounter = 0;
     public static int modelCounter = 0;
     
-    public static RobotModel[] robotModels=new RobotModel[100];
+    private static RobotModel[] robotModels=new RobotModel[100];
     public Customer[] customers=new Customer[100];
     public SalesAssociate[] salesAssociates=new SalesAssociate[100];
     
@@ -168,6 +168,9 @@ public class Shop {
     }
     public static Locomotor[] getLocomotorArray(){
         return LocomotorArray;
+    }
+    public static RobotModel[] getRobotModels(){
+        return robotModels;
     }
     
 }

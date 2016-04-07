@@ -336,7 +336,7 @@ public class RRSCLIPartManager {
                 System.out.println(ArrayOfParts[PartType][j].getIsApproved());
                 }
             }
-            System.out.println("\n");
+            System.out.println("");
         
     }
 }
