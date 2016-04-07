@@ -19,7 +19,7 @@ public class RRSCLIPartManager {
         System.out.println("");
 //        System.out.println("(S)earch Parts");
         System.out.println("(B)rowse Parts");
-        System.out.println("(E)dit Part");
+//        System.out.println("(E)dit Part");
         System.out.println("(N)ew part");
         System.out.println("E(x)it");
         int input = CLIinput.getChar(" Select Option ");
@@ -312,7 +312,7 @@ public class RRSCLIPartManager {
             
             System.out.println(name);
             System.out.println("--------");
-            System.out.println("Part Number, Name, Description");
+            System.out.println("Part Number, Name, Description, Weight, Price, Obsolete, Approved");
             for(int j = 0; j<ArrayOfParts[i].length; j++)
             {
                 if(ArrayOfParts[i][j] != null){
@@ -320,7 +320,15 @@ public class RRSCLIPartManager {
                 System.out.print(", ");
                 System.out.print(ArrayOfParts[i][j].getName());
                 System.out.print(", ");
-                System.out.println(ArrayOfParts[i][j].getDescription());
+                System.out.print(ArrayOfParts[i][j].getDescription());
+                System.out.print(", ");
+                System.out.print(ArrayOfParts[i][j].getWeight());
+                System.out.print(", ");
+                System.out.print(ArrayOfParts[i][j].getPrice());
+                System.out.print(", ");
+                System.out.print(ArrayOfParts[i][j].getIsObsolete());
+                System.out.print(", ");
+                System.out.println(ArrayOfParts[i][j].getIsApproved());
                 }
             }
             System.out.println("\n");
