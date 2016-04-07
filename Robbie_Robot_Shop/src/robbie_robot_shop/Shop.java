@@ -129,4 +129,22 @@ public class Shop {
     public static void save(){
     
     }
+    
+    // Getters for separate component arrays
+    public static Head[] getHeadArray(){
+        return HeadArray;
+    }
+    public static Torso[] getTorsoArray(){
+        return TorsoArray;
+    }
+    public static Arm[] getArmArray(){
+        return ArmArray;
+    }
+    public static Battery[] getBatteryArray(){
+        return BatteryArray;
+    }
+    public static Locomotor[] getLocomotorArray(){
+        return LocomotorArray;
+    }
+    
 }
