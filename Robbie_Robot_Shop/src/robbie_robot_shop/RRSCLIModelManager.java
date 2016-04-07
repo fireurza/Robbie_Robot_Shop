@@ -89,18 +89,25 @@ public class RRSCLIModelManager {
         // Display Head Options
         RRSCLIPartManager.printAllComponents(0);
         // get user input on head type
-        int modelHead = CLIinput.getChar(" Enter a Head part number");
+        int modelHead = CLIinput.getInt(" Enter a Head part number");
         // disply options to user
         System.out.println("");
         System.out.print("Torso: ");
         System.out.println(modelTorso);
         System.out.print("Batteries: ");
         for(int i = 1; i <= BatteriesAvailable; i++){
-            System.out.println(modelBattery[i]);
+            System.out.print(modelBattery[i]);
+            if(i < BatteriesAvailable){
+            System.out.print(", ");
+            }
         }
+        System.out.println("");
         System.out.print("Arms: ");
         for(int i = 1; i <= ArmsAvailable; i++){
-            System.out.println(modelArm[i]);
+            System.out.print(modelArm[i]);
+            if(i < ArmsAvailable){
+            System.out.print(", ");
+            }
         }
         System.out.print("Locomotor: ");
         System.out.println(modelLocomotor);

@@ -120,7 +120,7 @@ public class RRSCLIPartManager {
         System.out.println("");
         String Tname = CLIinput.getString("Enter Name");
         double Tweight = CLIinput.getDouble("Enter Weight ##.##");
-        double Tprice = CLIinput.getDouble("Enter Price");
+        double Tprice = CLIinput.getDouble("Enter Price ##.##");
         String Tdescription = CLIinput.getString("Enter Description");
         boolean Tobsolete = CLIinput.getBoolean("Is this an Obsolete part (Y/N)");
         boolean Tapproved = CLIinput.getBoolean("Has this part been Approved (Y/N)");
@@ -155,7 +155,7 @@ public class RRSCLIPartManager {
         System.out.println("");
         String Bname = CLIinput.getString("Enter Name");
         double Bweight = CLIinput.getDouble("Enter Weight ##.##");
-        double Bprice = CLIinput.getDouble("Enter Price");
+        double Bprice = CLIinput.getDouble("Enter Price ##.##");
         String Bdescription = CLIinput.getString("Enter Description");
         boolean Bobsolete = CLIinput.getBoolean("Is this an Obsolete part (Y/N)");
         boolean Bapproved = CLIinput.getBoolean("Has this part been Approved (Y/N)");
@@ -190,7 +190,7 @@ public class RRSCLIPartManager {
         System.out.println("");
         String Hname = CLIinput.getString("Enter Name");
         double Hweight = CLIinput.getDouble("Enter Weight ##.##");
-        double Hprice = CLIinput.getDouble("Enter Price");
+        double Hprice = CLIinput.getDouble("Enter Price ##.##");
         String Hdescription = CLIinput.getString("Enter Description");
         boolean Hobsolete = CLIinput.getBoolean("Is this an Obsolete part (Y/N)");
         boolean Happroved = CLIinput.getBoolean("Has this part been Approved (Y/N)");
@@ -221,7 +221,7 @@ public class RRSCLIPartManager {
         System.out.println("");
         String Aname = CLIinput.getString("Enter Name");
         double Aweight = CLIinput.getDouble("Enter Weight ##.##");
-        double Aprice = CLIinput.getDouble("Enter Price");
+        double Aprice = CLIinput.getDouble("Enter Price ##.##");
         String Adescription = CLIinput.getString("Enter Description");
         boolean Aobsolete = CLIinput.getBoolean("Is this an Obsolete part (Y/N)");
         boolean Aapproved = CLIinput.getBoolean("Has this part been Approved (Y/N)");
@@ -254,7 +254,7 @@ public class RRSCLIPartManager {
         System.out.println("");
         String Lname = CLIinput.getString("Enter Name");
         double Lweight = CLIinput.getDouble("Enter Weight ##.##");
-        double Lprice = CLIinput.getDouble("Enter Price");
+        double Lprice = CLIinput.getDouble("Enter Price ##.##");
         String Ldescription = CLIinput.getString("Enter Description");
         boolean Lobsolete = CLIinput.getBoolean("Is this an Obsolete part (Y/N)");
         boolean Lapproved = CLIinput.getBoolean("Has this part been Approved (Y/N)");
