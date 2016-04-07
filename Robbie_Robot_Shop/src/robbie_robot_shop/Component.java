@@ -38,6 +38,10 @@ public abstract class Component {
         return this.name;
     }
     
+    public static int getNumberOfParts(){
+        return numberOfParts;
+    }
+    
     public int getPartNumber(){
         return this.partNumber;
     }
@@ -96,5 +100,9 @@ public abstract class Component {
     
     public void setApproved(boolean myApproved){
         this.isApproved = myApproved;
+    }
+    
+    public static void incrementNumberOfParts(){
+        numberOfParts++;
     }
 }

@@ -45,10 +45,17 @@ public class RRSCLIModelManager {
     }
     
     public static void newModel(){
-        Component[][] ArrayOfParts = Shop.robotParts; 
+        Component[][] ArrayOfParts = Shop.robotParts;
+        Torso[] torsos = Shop.getTorsoArray();
+        Head[] heads = Shop.getHeadArray();
+        Arm[] arms = Shop.getArmArray();
+        Locomotor[] locomotors = Shop.getLocomotorArray();
+        Battery[] batteries = Shop.getBatteryArray();
         int BatteriesAvailable = 0;
         int ArmsAvailable = 0;
-                
+        int modelBattery[] = {-1,-1,-1};
+        int modelArm[] = {-1,-1};
+        
         RRSCLI.clearScreen();
         RRSCLI.printTitle();
         System.out.println("====New Model Creator====");
@@ -56,35 +63,54 @@ public class RRSCLIModelManager {
         // Display Torso Options
         RRSCLIPartManager.printAllComponents(1);
         // Get user input for torso type
-        int modelTorso = CLIinput.getChar(" Enter a Torso part number");
+        int modelTorso = CLIinput.getInt(" Enter a Torso part number");
         // Get number of batteries and arms supported by torso
         for (int i = 0; i < Shop.torsoCounter; i++){
             if(Shop.robotParts[1][i].getPartNumber() == modelTorso){
-//                BatteriesAvailable = ArrayOfParts[1][i].getBatteryCompartments();
-//                ArmsAvailable = ArrayOfParts[1][i].getArmSockets();
+                BatteriesAvailable = torsos[i].getBatteryCompartments();
+                ArmsAvailable = torsos[i].getArmSockets();
                 break;
             }
         }
-        // loop through getting user input on that many battries
-        for (int i = 0; i <= BatteriesAvailable; i++){
-            
+        RRSCLIPartManager.printAllComponents(3);
+        // loop through getting user input on that many batteries
+        for (int i = 1; i <= BatteriesAvailable; i++){
+            modelBattery[i] = CLIinput.getInt(" Enter a Battery part number");
         }
+        RRSCLIPartManager.printAllComponents(2);
         // loop through getting user input on that many arms
-        for (int i = 0; i <= ArmsAvailable; i++){
-            
+        for (int i = 1; i <= ArmsAvailable; i++){
+            modelArm[i] = CLIinput.getInt(" Enter an Arm part number");
         }
         // disply Locomotor options
+        RRSCLIPartManager.printAllComponents(4);
         // get user input for locomotor type
+        int modelLocomotor = CLIinput.getInt(" Enter a Locomotor part number");
         // Display Head Options
         RRSCLIPartManager.printAllComponents(0);
         // get user input on head type
         int modelHead = CLIinput.getChar(" Enter a Head part number");
         // disply options to user
-        
-// verify to create model or exit
+        System.out.println("");
+        System.out.print("Torso: ");
+        System.out.println(modelTorso);
+        System.out.print("Batteries: ");
+        for(int i = 1; i <= BatteriesAvailable; i++){
+            System.out.println(modelBattery[i]);
+        }
+        System.out.print("Arms: ");
+        for(int i = 1; i <= ArmsAvailable; i++){
+            System.out.println(modelArm[i]);
+        }
+        System.out.print("Locomotor: ");
+        System.out.println(modelLocomotor);
+        System.out.print("Head: ");
+        System.out.println(modelHead);
+        // verify to create model or exit
         int input = CLIinput.getChar(" (C)reate model or E(x)it ");
         if (input == 'C' || input == 'c'){
             // shop call to create model
+            Shop.createModel(modelTorso, modelBattery[1], modelBattery[2], modelBattery[3], modelArm[1], modelArm[2], modelLocomotor, modelHead);
         }
         else if (input == 'X' || input == 'x'){
             return;
