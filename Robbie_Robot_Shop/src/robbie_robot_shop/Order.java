@@ -19,18 +19,46 @@ public class Order {
     private Date date;
     private int quantity;
     private boolean status=false;
-    Customer customer;
-    Employee salesAssociate;
-    RobotModel robotModel;
+    private int customer;
+    private int salesAssociate;
+    private int lineItem;
     
-    public Order(int q){
-    this.orderNumber=this.orderNumber++;
+    public Order(int customer, int salesAssociate, int lineItem, int quantity){
+    this.orderNumber=Shop.orderCounter;
     Date d = new Date();
     this.date=d;
-    this.quantity=q;
+    this.customer = customer;
+    this.salesAssociate = salesAssociate;
+    this.lineItem = lineItem;
+    this.quantity = quantity;
     this.status=true;
     }
-    //methods
     
+    public int getOrderNumber(){
+        return this.orderNumber;
+    }
     
+    public Date getDate(){
+        return this.date;
+    }
+    
+    public int getCustomer(){
+        return this.customer;
+    }
+    
+    public int getEmployee(){
+        return this.salesAssociate;
+    }
+    
+    public int getLineItem(){
+        return this.lineItem;
+    }
+    
+    public int getQuantity(){
+        return this.quantity;
+    }
+    
+    public boolean getStatus(){
+        return this.status;
+    }
 }
