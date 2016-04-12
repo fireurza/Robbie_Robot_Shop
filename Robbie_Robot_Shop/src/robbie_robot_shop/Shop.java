@@ -8,7 +8,7 @@ import java.util.Arrays;
  */
 public class Shop {
      
-    public Order[] orders=new Order[10000];
+    public static Order[] orders=new Order[10000];
     // Containers for parts
     private static Head[] HeadArray = new Head[100];
     private static Torso[] TorsoArray = new Torso[100];
@@ -26,6 +26,7 @@ public class Shop {
     public static int modelCounter = 0;
     public static int customerCounter = 0;
     public static int employeeCounter = 0;
+    public static int orderCounter = 0;
     
     private static RobotModel[] robotModels=new RobotModel[100];
     private static Customer[] customers=new Customer[100];
@@ -149,8 +150,9 @@ public class Shop {
         
     }
     
-    public static void placeOrder(){
-    
+    public static void newOrder(int customer, int salesAssociate, int lineItem, int quantity){
+        Order O1 = new Order(customer, salesAssociate, lineItem, quantity);
+        orders[orderCounter++] = O1;
     }
     
     public static void runReport(){
@@ -187,5 +189,9 @@ public class Shop {
     
     public static Employee[] getEmployees(){
         return employees;
+    }
+    
+    public static Order[] getOrders(){
+        return orders;
     }
 }
