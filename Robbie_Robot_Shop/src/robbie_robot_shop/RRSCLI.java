@@ -43,6 +43,9 @@ public class RRSCLI {
         else if (input == 'R' || input == 'r'){
             RRSCLIReportManager.reportManager();
         }
+        else if (input == 'T' || input == 't'){
+            createTestData();
+        }
         else if (input == 'X' || input == 'x'){
             exit = true;
         }
@@ -63,5 +66,39 @@ public class RRSCLI {
         for(int i = 1; i< 100; i++){
             System.out.println("");
         }
+    }
+    
+    public static void createTestData(){
+        // if part count = 0 make all test parts
+        if (Shop.torsoCounter == 0){
+            Shop.createTorso("testTorso", 99.99, 99.99, "testTorso Description", false, true, 3, 2);
+        }
+        if (Shop.armCounter == 0){
+            Shop.createArm("testArm", 99.99, 99.99, "testArm Description", false, true, 99.99);
+        }
+        if (Shop.headCounter == 0){
+            Shop.createHead("testHead", 99.99, 99.99, "testHead Description", false, true);
+        }
+        if (Shop.batteryCounter == 0){
+            Shop.createBattery("testBattery", 99.99, 99.99, "testBattery Description", false, true, 99.99, 99.99);
+        }
+        if (Shop.locomotorCounter == 0){
+            Shop.createLocomotor("testLocomotor", 99.99, 99.99, "testLocomotor Description", false, true, 99.99, 99.99);
+        }
+        // make test model
+        if (Shop.modelCounter == 0){
+            Shop.createModel("testModel", 0, 3, 3, 3, 1, 1, 4, 2);
+        }
+        // make test customer
+        if (Shop.customerCounter == 0){
+            Shop.newCustomer("testCustomer");
+        }
+        // make test employee - salesAssociate & Boss
+        if (Shop.employeeCounter == 0){
+            Shop.newEmployee("testEmployeeSale", "Sales");
+            Shop.newEmployee("testEmployeeBoss", "Boss");
+        }
+        
+        System.out.println("TEST parts, model, customer, & employees created");
     }
 }

@@ -3,14 +3,14 @@ package robbie_robot_shop;
 
 public class Employee {
     private String name;
-    private int employeeNumber=1;
+    private int employeeNumber;
     private String type;
 //    Order[] orders=new Order[100000];
     
     public Employee(String name, String type){
     this.name=name;
     this.type = type;
-    this.employeeNumber=this.employeeNumber++;
+    this.employeeNumber=Shop.employeeCounter;
     }
     
     public String getName(){
