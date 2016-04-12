@@ -4,14 +4,14 @@ package robbie_robot_shop;
 
 public class Customer {
      private String name;  
-     private int customerNumber=1; 
+     private int customerNumber; 
      private double bill;
      
 //     Order[] orders=new Order[10000];
      
      public Customer(String name){
      this.name=name;
-     this.customerNumber=this.customerNumber++;
+     this.customerNumber=Shop.customerCounter;
      this.bill=0;
      }
      
