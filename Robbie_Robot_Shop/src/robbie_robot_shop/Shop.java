@@ -24,10 +24,12 @@ public class Shop {
     public static int batteryCounter = 0;
     public static int locomotorCounter = 0;
     public static int modelCounter = 0;
+    public static int customerCounter = 0;
+    public static int employeeCounter = 0;
     
     private static RobotModel[] robotModels=new RobotModel[100];
-    private Customer[] customers=new Customer[100];
-    private SalesAssociate[] salesAssociates=new SalesAssociate[100];
+    private static Customer[] customers=new Customer[100];
+    private static Employee[] employees=new Employee[100];
     
     // Constructor
     public Shop(){
@@ -133,8 +135,14 @@ public class Shop {
     
     }
     
-    public static void newCustomer(){
+    public static void newCustomer(String name){
+        Customer C1 = new Customer(name);
+        customers[customerCounter++] = C1;
+    }
     
+    public static void newEmployee(String name, String type){
+        Employee E1 = new Employee(name, type);
+        employees[employeeCounter++] = E1;
     }
     
     public static void editCustomer(){
@@ -173,4 +181,11 @@ public class Shop {
         return robotModels;
     }
     
+    public static Customer[] getCustomers(){
+        return customers;
+    }
+    
+    public static Employee[] getEmployees(){
+        return employees;
+    }
 }

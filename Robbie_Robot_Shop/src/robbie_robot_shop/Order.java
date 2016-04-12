@@ -20,7 +20,7 @@ public class Order {
     private int quantity;
     private boolean status=false;
     Customer customer;
-    SalesAssociate salesAssociate;
+    Employee salesAssociate;
     RobotModel robotModel;
     
     public Order(int q){

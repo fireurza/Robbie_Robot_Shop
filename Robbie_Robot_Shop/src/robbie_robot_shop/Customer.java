@@ -6,6 +6,7 @@ public class Customer {
      private String name;  
      private int customerNumber=1; 
      private double bill;
+     
 //     Order[] orders=new Order[10000];
      
      public Customer(String name){
@@ -28,5 +29,9 @@ public class Customer {
      
      public double getBill(){
          return this.bill;
+     }
+     
+     public int getCustomerNumber(){
+         return this.customerNumber;
      }
 }

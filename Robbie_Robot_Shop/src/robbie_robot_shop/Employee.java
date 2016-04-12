@@ -1,13 +1,15 @@
 package robbie_robot_shop;
 
 
-public class SalesAssociate {
+public class Employee {
     private String name;
     private int employeeNumber=1;
+    private String type;
 //    Order[] orders=new Order[100000];
     
-    public SalesAssociate(String name){
+    public Employee(String name, String type){
     this.name=name;
+    this.type = type;
     this.employeeNumber=this.employeeNumber++;
     }
     
@@ -20,5 +22,13 @@ public class SalesAssociate {
     
     public int getEmployeeNumber(){
         return this.employeeNumber;
+    }
+    
+    public void setType(String type){
+        this.type = type;
+    }
+    
+    public String getType(){
+        return this.type;
     }
 }
