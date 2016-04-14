@@ -95,12 +95,12 @@ public class RRSCLI {
         }
         // make test employee - salesAssociate & Boss
         if (Shop.employeeCounter == 0){
-            Shop.newEmployee("testEmployeeSale", "Sales");
-            Shop.newEmployee("testEmployeeBoss", "Boss");
+            Shop.newEmployee("testSalesAssociate", "Sales");
+            Shop.newEmployee("testBOSS", "Boss");
         }
         // make test order
         if (Shop.orderCounter == 0){
-            Shop.newOrder(0, 0, 0, 99);
+            Shop.newOrder(0, 0, 0, 99, 99);
         }
         
         System.out.println("TEST parts, model, customer, & employees created");

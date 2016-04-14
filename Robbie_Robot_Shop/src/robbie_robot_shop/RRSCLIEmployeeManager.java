@@ -104,14 +104,14 @@ public class RRSCLIEmployeeManager {
     
     public static void printAllEmployees(){
         Employee[] employees = Shop.getEmployees();
-        System.out.println("Name, Employee Number");
+        System.out.println("Employee Number, Name");
         
             
         for(int i = 0; i < Shop.employeeCounter; i++){
             if(employees[i] != null){
-                System.out.print(employees[i].getName());
+                System.out.print(employees[i].getEmployeeNumber());
                 System.out.print(", ");
-                System.out.println(employees[i].getEmployeeNumber());
+                System.out.println(employees[i].getName());
             }
         }
     }

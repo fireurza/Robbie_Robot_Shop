@@ -102,14 +102,14 @@ public class RRSCLICustomerManager {
     
     public static void printAllCustomers(){
         Customer[] customers = Shop.getCustomers();
-        System.out.println("Name, Customer Number, Bill");
+        System.out.println("Customer Number, Name, Bill");
         
             
         for(int i = 0; i < Shop.customerCounter; i++){
             if(customers[i] != null){
-                System.out.print(customers[i].getName());
-                System.out.print(", ");
                 System.out.print(customers[i].getCustomerNumber());
+                System.out.print(", ");
+                System.out.print(customers[i].getName());
                 System.out.print(", ");
                 System.out.println(customers[i].getBill());
                 

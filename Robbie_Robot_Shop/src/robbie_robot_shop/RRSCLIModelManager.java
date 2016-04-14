@@ -166,11 +166,13 @@ public class RRSCLIModelManager {
     
     public static void printAllModels(){
         RobotModel[] robotModels = Shop.getRobotModels();
-        System.out.println("Name, Torso, Battery1, Battery2, Battery3, Arm1, Arm2, Locomotor, Head");
+        System.out.println("Model Number, Name, Torso, Battery1, Battery2, Battery3, Arm1, Arm2, Locomotor, Head");
         
             
         for(int i = 0; i < Shop.modelCounter; i++){
             if(robotModels[i] != null){
+                System.out.print(i);
+                System.out.print(", ");
                 System.out.print(robotModels[i].getName());
                 System.out.print(", ");
                 System.out.print(robotModels[i].getTorso());
