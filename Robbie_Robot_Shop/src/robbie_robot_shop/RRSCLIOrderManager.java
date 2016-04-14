@@ -65,20 +65,30 @@ public class RRSCLIOrderManager {
         // disply options to user
         System.out.println("");
         System.out.println("");
+        System.out.print("Customer Name: ");
         Customer customers[] = Shop.getCustomers();
         System.out.println(customers[customerName].getName());
+        System.out.print("Sales Associate: ");
         Employee employees[] = Shop.getEmployees();
         System.out.println(employees[employeeName].getName());
+        System.out.println("RobotModel: ");
         RobotModel robots[] = Shop.getRobotModels();
         System.out.println(robots[robotModel].getName());
+        System.out.print("Quantity Sold: ");
         System.out.println(quantity);
+        System.out.print("Price Billed: ");
+        // TODO Calculate bill
         System.out.println("");
         
         // verify to create model or exit
         int input = CLIinput.getChar(" (C)reate order or E(x)it ");
         if (input == 'C' || input == 'c'){
             // shop call to create model
-            Shop.newOrder(customerName, employeeName, robotModel, quantity);
+            // TODO calculate bill
+            double bill = 0;
+            //double bill = robots(robotModel].getPrice * quantity;
+            Shop.newOrder(customerName, employeeName, robotModel, quantity, bill);
+            // TODO Add bill to customers data
         }
         else if (input == 'X' || input == 'x'){
             return;

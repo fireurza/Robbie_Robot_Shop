@@ -100,7 +100,7 @@ public class RRSCLI {
         }
         // make test order
         if (Shop.orderCounter == 0){
-            Shop.newOrder(0, 0, 0, 99);
+            Shop.newOrder(0, 0, 0, 99, 99);
         }
         
         System.out.println("TEST parts, model, customer, & employees created");

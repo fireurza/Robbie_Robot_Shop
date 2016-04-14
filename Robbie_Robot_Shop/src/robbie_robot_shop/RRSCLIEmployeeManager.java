@@ -109,9 +109,9 @@ public class RRSCLIEmployeeManager {
             
         for(int i = 0; i < Shop.employeeCounter; i++){
             if(employees[i] != null){
-                System.out.println(employees[i].getEmployeeNumber());
+                System.out.print(employees[i].getEmployeeNumber());
                 System.out.print(", ");
-                System.out.print(employees[i].getName());
+                System.out.println(employees[i].getName());
             }
         }
     }

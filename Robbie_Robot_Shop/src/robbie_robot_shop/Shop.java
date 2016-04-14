@@ -150,8 +150,8 @@ public class Shop {
         
     }
     
-    public static void newOrder(int customer, int salesAssociate, int lineItem, int quantity){
-        Order O1 = new Order(customer, salesAssociate, lineItem, quantity);
+    public static void newOrder(int customer, int salesAssociate, int lineItem, int quantity, double bill){
+        Order O1 = new Order(customer, salesAssociate, lineItem, quantity, bill);
         orders[orderCounter++] = O1;
     }
     

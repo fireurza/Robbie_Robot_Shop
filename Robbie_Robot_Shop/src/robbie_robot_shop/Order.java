@@ -22,8 +22,9 @@ public class Order {
     private int customer;
     private int salesAssociate;
     private int lineItem;
+    private double bill;
     
-    public Order(int customer, int salesAssociate, int lineItem, int quantity){
+    public Order(int customer, int salesAssociate, int lineItem, int quantity, double bill){
     this.orderNumber=Shop.orderCounter;
     Date d = new Date();
     this.date=d;
@@ -32,6 +33,7 @@ public class Order {
     this.lineItem = lineItem;
     this.quantity = quantity;
     this.status=true;
+    this.bill = bill;
     }
     
     public int getOrderNumber(){
@@ -60,5 +62,13 @@ public class Order {
     
     public boolean getStatus(){
         return this.status;
+    }
+    
+    public double getBill(){
+        return this.bill;
+    }
+    
+    public void setBill(double bill){
+        this.bill = bill;
     }
 }
