@@ -49,13 +49,13 @@ public class RRSCLIOrderManager {
         RRSCLI.printTitle();
         System.out.println("====New Order Creator====");
         System.out.println("");
-        // TODO Display customers
+        RRSCLICustomerManager.printAllCustomers();
         int customerName = CLIinput.getInt(" Enter the customers number");
         // TODO Check if that is a valid customer
-        // TODO Display Sales associates
+        RRSCLIEmployeeManager.printAllEmployees();
         int employeeName = CLIinput.getInt(" Enter Sales Associate Number");
         // TODO Check if that is a valid sales associate
-        // TODO Display robot models
+        RRSCLIModelManager.printAllModels();
         int robotModel = CLIinput.getInt(" Enter robot model");
         // TODO Check if that is a valid robot model
         do{
@@ -65,16 +65,12 @@ public class RRSCLIOrderManager {
         // disply options to user
         System.out.println("");
         System.out.println("");
-        // TODO Display actual customer information
         Customer customers[] = Shop.getCustomers();
         System.out.println(customers[customerName].getName());
-        // Display actual sales associates name
         Employee employees[] = Shop.getEmployees();
         System.out.println(employees[employeeName].getName());
-        // Display actual robot data
         RobotModel robots[] = Shop.getRobotModels();
         System.out.println(robots[robotModel].getName());
-        // display quanity
         System.out.println(quantity);
         System.out.println("");
         
