@@ -25,7 +25,7 @@ public class RRSCLIEmployeeManager {
         if (input == 'S' || input == 's'){
             searchEmployees();
         }
-        if (input == 'B' || input == 'b'){
+        else if (input == 'B' || input == 'b'){
             browseEmployees();
         }
         else if (input == 'E' || input == 'e'){

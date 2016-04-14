@@ -26,7 +26,7 @@ public class RRSCLIPartManager {
         if (input == 'S' || input == 's'){
             searchParts();
         }
-        if (input == 'B' || input == 'b'){
+        else if (input == 'B' || input == 'b'){
             browseParts();
         }
         else if (input == 'E' || input == 'e'){

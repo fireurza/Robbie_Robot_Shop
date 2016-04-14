@@ -25,7 +25,7 @@ public class RRSCLIOrderManager {
         if (input == 'S' || input == 's'){
             searchOrders();
         }
-        if (input == 'B' || input == 'b'){
+        else if (input == 'B' || input == 'b'){
             browseOrders();
         }
         else if (input == 'E' || input == 'e'){
