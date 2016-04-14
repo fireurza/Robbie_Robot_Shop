@@ -150,9 +150,12 @@ public class Shop {
         
     }
     
-    public static void newOrder(int customer, int salesAssociate, int lineItem, int quantity, double bill){
-        Order O1 = new Order(customer, salesAssociate, lineItem, quantity, bill);
+    public static void newOrder(int customer, int salesAssociate, int lineItem, int quantity, double billed){
+        Order O1 = new Order(customer, salesAssociate, lineItem, quantity, billed);   
         orders[orderCounter++] = O1;
+        double currentBill = customers[customer].getBill();
+        currentBill = currentBill + billed;
+        customers[customer].setBill(currentBill);
     }
     
     public static void runReport(){
