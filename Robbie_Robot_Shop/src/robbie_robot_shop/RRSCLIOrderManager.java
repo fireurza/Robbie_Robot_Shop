@@ -78,6 +78,7 @@ public class RRSCLIOrderManager {
         System.out.println(quantity);
         System.out.print("Price Billed: ");
         // TODO Calculate bill
+        System.out.print("To be determined, for now let's charge them $1");
         System.out.println("");
         
         // verify to create model or exit
@@ -85,7 +86,7 @@ public class RRSCLIOrderManager {
         if (input == 'C' || input == 'c'){
             // shop call to create model
             // TODO calculate bill
-            double bill = 0;
+            double bill = 1;
             //double bill = robots(robotModel].getPrice * quantity;
             Shop.newOrder(customerName, employeeName, robotModel, quantity, bill);
             // TODO Add bill to customers data
