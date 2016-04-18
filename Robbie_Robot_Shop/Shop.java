@@ -151,15 +151,11 @@ public class Shop {
     public static void newCustomer(String name){
         Customer C1 = new Customer(name);
         customers[customerCounter++] = C1;
-        IOFile file = new IOFile();
-        file.writeCustomerFile();
     }
     
     public static void newEmployee(String name, String type){
         Employee E1 = new Employee(name, type);
         employees[employeeCounter++] = E1;
-        IOFile file = new IOFile();
-        file.writeEmployeeFile();
     }
     
     public static void editCustomer(){
@@ -172,8 +168,6 @@ public class Shop {
         double currentBill = customers[customer].getBill();
         currentBill = currentBill + billed;
         customers[customer].setBill(currentBill);
-        IOFile file = new IOFile();
-        file.writeOrderFile();
     }
     
     public static void runReport(){
