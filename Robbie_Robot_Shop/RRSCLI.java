@@ -11,6 +11,9 @@ import java.io.IOException;
 public class RRSCLI {
     
     public static void main(String[] args) throws IOException{
+        IOFile file = new IOFile();
+        file.readAll();
+        
         boolean exit = false;
         do{
         clearScreen();
@@ -53,7 +56,7 @@ public class RRSCLI {
             System.out.println("Unrecognized Input");
         }
         }while(!exit);
-        
+//        IOFile.writeComponentFile();
     }
     
     public static void printTitle() {
@@ -95,16 +98,12 @@ public class RRSCLI {
         }
         // make test employee - salesAssociate & Boss
         if (Shop.employeeCounter == 0){
-            Shop.newEmployee("testSalesAssociate", "Sales");
-            Shop.newEmployee("testBOSS", "Boss");
+            Shop.newEmployee("testEmployeeSale", "Sales");
+            Shop.newEmployee("testEmployeeBoss", "Boss");
         }
         // make test order
         if (Shop.orderCounter == 0){
-<<<<<<< HEAD
-            Shop.newOrder(0, 0, 0, 99, 99);
-=======
             Shop.newOrder(0, 0, 0, 99, 1.0);
->>>>>>> origin/Jonathan
         }
         IOFile file = new IOFile();
         file.writeAll();
