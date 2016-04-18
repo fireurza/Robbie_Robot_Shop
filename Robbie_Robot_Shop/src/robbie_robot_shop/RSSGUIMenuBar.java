@@ -14,19 +14,36 @@ public class RSSGUIMenuBar extends JFrame implements MenuListener, KeyListener, 
 {
     JMenuBar menuBar;
     JMenu shop, partOption, modelOption, orderOption, customerOption, employeeOption, reportOption;
+<<<<<<< HEAD
     JMenuItem searchParts, browseParts, editParts, newParts, exit;
+=======
+    JMenuItem searchParts, browseParts, editParts, newParts, exit,testOption;
+>>>>>>> origin/Gasser
     JMenuItem searchModels, browseModels, editModels, newModels;
     JMenuItem searchOrders, browseOrders, editOrders, newOrders;
     JMenuItem searchCustomers, browseCustomers, editCustomer, newCustomer;
     JMenuItem searchEmployees, browseEmployees, editEmployee, newEmployee;
     JMenuItem openReport, searchReport;
+<<<<<<< HEAD
     
+=======
+    static Object[][] partsData=new Object[30][9];
+    static Object[][] modelsData=new Object[30][12];
+    static Object[][] ordersData=new Object[30][8];
+    static Object[][] customersData=new Object[30][4];
+    static Object[][] employeesData=new Object[30][3];
+   
+>>>>>>> origin/Gasser
     public static void main(String[] args)
     {
         RSSGUIMenuBar fr = new RSSGUIMenuBar();
         fr.setVisible(true); 
     }
+<<<<<<< HEAD
     
+=======
+   
+>>>>>>> origin/Gasser
     public RSSGUIMenuBar()
     {
         setLayout(new FlowLayout());
@@ -161,6 +178,16 @@ public class RSSGUIMenuBar extends JFrame implements MenuListener, KeyListener, 
         reportOption.add(searchReport);
         reportOption.add(openReport);
         
+<<<<<<< HEAD
+=======
+        // creat test menu item
+        testOption = new JMenuItem("Test");
+        testOption.setMnemonic(KeyEvent.VK_X);
+        testOption.addActionListener(this);
+        shop.addSeparator();
+        shop.add(testOption);
+        
+>>>>>>> origin/Gasser
         // creat exit menu item
         exit = new JMenuItem("Exit");
         exit.setMnemonic(KeyEvent.VK_X);
@@ -245,12 +272,41 @@ public class RSSGUIMenuBar extends JFrame implements MenuListener, KeyListener, 
             a.setVisible(true);
             setLayout(new FlowLayout());
             setSize(898,698);
+<<<<<<< HEAD
             setTitle("Test2");
             //setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
             setLocationRelativeTo(null);
         
             JRadioButton testButton = new JRadioButton("blagh");
             add(testButton);
+=======
+            setTitle("Browse Parts");
+            //setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            setLocationRelativeTo(null);
+        
+            String[] columnNames = {"Part Number", "Name","Description", "Weight","Price","Obsolete","Approved"};
+        
+        
+       for(int i = 0; i<20; i++)
+        {
+            RSSGUIPartManager.browseAllComponents(i);
+        }
+        
+     
+        JTable table = new JTable(partsData, columnNames);   
+        JScrollPane scrollPane = new JScrollPane(table);
+        table.setFillsViewportHeight(true);
+        table.disable();
+        getContentPane().removeAll();
+        scrollPane.setVisible(true);
+        setLayout(new FlowLayout());
+        setSize(893,693);
+        setLayout(new GridLayout());
+        setLocationRelativeTo(null);
+        setLayout(new GridLayout());
+        add(scrollPane);
+          
+>>>>>>> origin/Gasser
         }
         // edit parts
         if(e.getSource().equals(editParts))
@@ -300,6 +356,7 @@ public class RSSGUIMenuBar extends JFrame implements MenuListener, KeyListener, 
         // browse model
         if(e.getSource().equals(browseModels))
         {
+<<<<<<< HEAD
             JPanel f = new JPanel();
             getContentPane().removeAll();
             f.setVisible(true);
@@ -311,6 +368,36 @@ public class RSSGUIMenuBar extends JFrame implements MenuListener, KeyListener, 
         
             JRadioButton testButton = new JRadioButton("TEST6");
             add(testButton);
+=======
+            JPanel a = new JPanel();
+            getContentPane().removeAll();
+            a.setVisible(true);
+            setLayout(new FlowLayout());
+            setSize(898,698);
+            setTitle("Browse Models");
+            //setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            setLocationRelativeTo(null);
+            String[] columnNames = {"Model Number", "Name","Torso", "Battery1","Battery2","Battery3","Arm1","Arm2","Locomotor","Head"};
+        
+        
+       for(int i = 0; i<20; i++)
+        {
+            RSSGUIModelManager.browseAllModels();
+        }
+        
+     
+        JTable table = new JTable(modelsData, columnNames);   
+        JScrollPane scrollPane = new JScrollPane(table);
+        table.setFillsViewportHeight(true);
+        table.disable();
+        getContentPane().removeAll();
+        scrollPane.setVisible(true);
+        setLayout(new FlowLayout());
+        setSize(893,693);
+        setLayout(new GridLayout());
+        setLocationRelativeTo(null);
+        add(scrollPane);
+>>>>>>> origin/Gasser
         }
         // edit model
         if(e.getSource().equals(editModels))
@@ -360,6 +447,7 @@ public class RSSGUIMenuBar extends JFrame implements MenuListener, KeyListener, 
         // browse order
         if(e.getSource().equals(browseOrders))
         {
+<<<<<<< HEAD
             JPanel f = new JPanel();
             getContentPane().removeAll();
             f.setVisible(true);
@@ -371,6 +459,36 @@ public class RSSGUIMenuBar extends JFrame implements MenuListener, KeyListener, 
         
             JRadioButton testButton = new JRadioButton("TEST10");
             add(testButton);
+=======
+            JPanel a = new JPanel();
+            getContentPane().removeAll();
+            a.setVisible(true);
+            setLayout(new FlowLayout());
+            setSize(898,698);
+            setTitle("Browse Orders");
+            setLocationRelativeTo(null);
+            String[] columnNames = {"Order Number","Date order placed","Customer","Sales Associate","Robot Model","Quantity","Status"};
+        
+        
+       for(int i = 0; i<20; i++)
+        {
+            RSSGUIOrderManager.browseAllOrders();
+        }
+        
+     
+        JTable table = new JTable(ordersData, columnNames);   
+        JScrollPane scrollPane = new JScrollPane(table);
+        table.setFillsViewportHeight(true);
+        table.disable();
+        setLayout(new GridLayout());
+        getContentPane().removeAll();
+        scrollPane.setVisible(true);
+        setLayout(new FlowLayout());
+        setSize(893,693);
+        setLayout(new GridLayout());
+        setLocationRelativeTo(null);
+        add(scrollPane);
+>>>>>>> origin/Gasser
         }
         // edit order
         if(e.getSource().equals(editOrders))
@@ -420,6 +538,7 @@ public class RSSGUIMenuBar extends JFrame implements MenuListener, KeyListener, 
         // browse customer
         if(e.getSource().equals(browseCustomers))
         {
+<<<<<<< HEAD
             JPanel f = new JPanel();
             getContentPane().removeAll();
             f.setVisible(true);
@@ -431,6 +550,36 @@ public class RSSGUIMenuBar extends JFrame implements MenuListener, KeyListener, 
         
             JRadioButton testButton = new JRadioButton("TEST14");
             add(testButton);
+=======
+            JPanel a = new JPanel();
+            getContentPane().removeAll();
+            a.setVisible(true);
+            setLayout(new FlowLayout());
+            setSize(898,698);
+            setTitle("Browse Customers");
+            setLocationRelativeTo(null);
+            String[] columnNames = {"Customer Number", "Name", "Bill"};
+        
+        
+       for(int i = 0; i<20; i++)
+        {
+            RSSGUICustomerManager.browseAllCustomers();
+        }
+        
+     
+        JTable table = new JTable(customersData, columnNames);   
+        JScrollPane scrollPane = new JScrollPane(table);
+        table.setFillsViewportHeight(true);
+        table.disable();
+        setLayout(new GridLayout());
+        getContentPane().removeAll();
+        scrollPane.setVisible(true);
+        setLayout(new FlowLayout());
+        setSize(893,693);
+        setLayout(new GridLayout());
+        setLocationRelativeTo(null);
+        add(scrollPane);
+>>>>>>> origin/Gasser
         }
         // edit customer
         if(e.getSource().equals(editCustomer))
@@ -480,6 +629,7 @@ public class RSSGUIMenuBar extends JFrame implements MenuListener, KeyListener, 
         // browse employee
         if(e.getSource().equals(browseEmployees))
         {
+<<<<<<< HEAD
             JPanel f = new JPanel();
             getContentPane().removeAll();
             f.setVisible(true);
@@ -491,6 +641,36 @@ public class RSSGUIMenuBar extends JFrame implements MenuListener, KeyListener, 
         
             JRadioButton testButton = new JRadioButton("TEST18");
             add(testButton);
+=======
+            JPanel a = new JPanel();
+            getContentPane().removeAll();
+            a.setVisible(true);
+            setLayout(new FlowLayout());
+            setSize(898,698);
+            setTitle("Browse Employees");
+            setLocationRelativeTo(null);
+            String[] columnNames = {"Employee Number", "Name"};
+        
+        
+       for(int i = 0; i<20; i++)
+        {
+            RSSGUIEmployeesManager.browseAllEmployees();
+        }
+        
+     
+        JTable table = new JTable(employeesData, columnNames);   
+        JScrollPane scrollPane = new JScrollPane(table);
+        table.setFillsViewportHeight(true);
+        table.disable();
+        setLayout(new GridLayout());
+        getContentPane().removeAll();
+        scrollPane.setVisible(true);
+        setLayout(new FlowLayout());
+        setSize(893,693);
+        setLayout(new GridLayout());
+        setLocationRelativeTo(null);
+        add(scrollPane);
+>>>>>>> origin/Gasser
         }
         // edit employee
         if(e.getSource().equals(editEmployee))
@@ -553,6 +733,19 @@ public class RSSGUIMenuBar extends JFrame implements MenuListener, KeyListener, 
             add(testButton);
         }
         
+<<<<<<< HEAD
+=======
+        if(e.getSource().equals(testOption))
+        {
+            //Creating Test Data
+            RRSCLI.createTestData();
+            
+            // Prints “Hello, World” to a dialog box 
+             JOptionPane.showMessageDialog(null, "TEST Parts, Model, Customer, & Employees have been created");
+            
+        }
+        
+>>>>>>> origin/Gasser
         
     }
 
