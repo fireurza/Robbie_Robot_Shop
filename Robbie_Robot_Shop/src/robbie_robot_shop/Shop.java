@@ -43,7 +43,11 @@ public class Shop {
         Torso T1 = new Torso();
         T1.setPartNumber(Component.getNumberOfParts() + 1); 
         Component.incrementNumberOfParts();
+<<<<<<< HEAD
         T1.setType("torso");
+=======
+        T1.setType("Torso");
+>>>>>>> origin/Gasser
         T1.setName(Tname);
         T1.setWeight(Tweight);
         T1.setPrice(Tprice);
@@ -53,8 +57,11 @@ public class Shop {
         T1.setBatteryCompartments(TbatteryCompartments);
         T1.setArmSockets(TarmSockets);
         TorsoArray[torsoCounter++] = T1;
+<<<<<<< HEAD
         IOFile file = new IOFile();
         file.writeComponentFile();
+=======
+>>>>>>> origin/Gasser
     }
     public static void createLocomotor(String Lname, double Lweight, double Lprice, String Ldescription, boolean Lobsolete, boolean Lapproved, double LmaxSpeed, double LpowerConsumptionRate){
         Locomotor L1 = new Locomotor();
@@ -70,8 +77,11 @@ public class Shop {
         L1.setMaxSpeed(LmaxSpeed);
         L1.setPowerConsumptionRate(LpowerConsumptionRate);
         LocomotorArray[locomotorCounter++] = L1;
+<<<<<<< HEAD
         IOFile file = new IOFile();
         file.writeComponentFile();
+=======
+>>>>>>> origin/Gasser
     }
     public static void createBattery(String Bname, double Bweight, double Bprice, String Bdescription, boolean Bobsolete, boolean Bapproved, double Benergy, double BmaxPower){
         Battery B1 = new Battery();
@@ -87,8 +97,11 @@ public class Shop {
         B1.setEnergy(Benergy);
         B1.setMaxPower(BmaxPower);
         BatteryArray[batteryCounter++] = B1;
+<<<<<<< HEAD
         IOFile file = new IOFile();
         file.writeComponentFile();
+=======
+>>>>>>> origin/Gasser
     }
     public static void createHead(String Hname, double Hweight, double Hprice, String Hdescription, boolean Hobsolete, boolean Happroved){
         Head H1 = new Head();
@@ -102,8 +115,11 @@ public class Shop {
         H1.setObsolete(Hobsolete);
         H1.setApproved(Happroved);
         HeadArray[headCounter++] = H1;
+<<<<<<< HEAD
         IOFile file = new IOFile();
         file.writeComponentFile();
+=======
+>>>>>>> origin/Gasser
     }
     public static void createArm(String Aname, double Aweight, double Aprice, String Adescription, boolean Aobsolete, boolean Aapproved, double ApowerConsumptionRate){
         Arm A1 = new Arm();
@@ -118,8 +134,11 @@ public class Shop {
         A1.setApproved(Aapproved);
         A1.setPowerConsumptionRate(ApowerConsumptionRate);
         ArmArray[armCounter++] = A1;
+<<<<<<< HEAD
         IOFile file = new IOFile();
         file.writeComponentFile();
+=======
+>>>>>>> origin/Gasser
     }
     
     public static void editPart(){
@@ -138,8 +157,11 @@ public class Shop {
         RM.setLocomotor(Locomotor);
         RM.setHead(Head);
         robotModels[modelCounter++] = RM;
+<<<<<<< HEAD
         IOFile file = new IOFile();
         file.writeModelFile();
+=======
+>>>>>>> origin/Gasser
     }
     
     
@@ -151,15 +173,21 @@ public class Shop {
     public static void newCustomer(String name){
         Customer C1 = new Customer(name);
         customers[customerCounter++] = C1;
+<<<<<<< HEAD
         IOFile file = new IOFile();
         file.writeCustomerFile();
+=======
+>>>>>>> origin/Gasser
     }
     
     public static void newEmployee(String name, String type){
         Employee E1 = new Employee(name, type);
         employees[employeeCounter++] = E1;
+<<<<<<< HEAD
         IOFile file = new IOFile();
         file.writeEmployeeFile();
+=======
+>>>>>>> origin/Gasser
     }
     
     public static void editCustomer(){
@@ -172,8 +200,11 @@ public class Shop {
         double currentBill = customers[customer].getBill();
         currentBill = currentBill + billed;
         customers[customer].setBill(currentBill);
+<<<<<<< HEAD
         IOFile file = new IOFile();
         file.writeOrderFile();
+=======
+>>>>>>> origin/Gasser
     }
     
     public static void runReport(){

@@ -305,7 +305,11 @@ public class RRSCLIPartManager {
                     name = "Arms";
                     break;
                 case 3:
+<<<<<<< HEAD
                     name = "Batterys";
+=======
+                    name = "Batteries";
+>>>>>>> origin/Gasser
                     break;
                 case 4:
                     name = "Locomotors";
