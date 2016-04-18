@@ -9,17 +9,24 @@ import java.lang.*;
  */
 public class IOFile { 
     
-    private Scanner infile;
     private Formatter outfile;
     
     public void readAll()
     {
         readComponentFile();
+        readModelFile();
+        readCustomerFile();
+        readEmployeeFile();
+        readOrderFile();
     }
     
     public void writeAll()
     {
         writeComponentFile();
+        writeModelFile();
+        writeCustomerFile();
+        writeEmployeeFile();
+        writeOrderFile();
     }
     
     public void writeComponentFile()
@@ -84,15 +91,8 @@ public class IOFile {
         outfile.close();
     }
     
-    public void readComponentFile()
+    private void readComponentFile()
     {
-        
-        Component[][] array = Shop.robotParts;
-        Head[] head = Shop.getHeadArray(); 
-        Torso[] torso = Shop.getTorsoArray();
-        Arm[] arm = Shop.getArmArray();
-        Battery[] battery = Shop.getBatteryArray();
-        Locomotor[] loco = Shop.getLocomotorArray();
         String line;
         
         try{
@@ -104,14 +104,13 @@ public class IOFile {
                 line = scanner.nextLine();
                 String[] result = line.split(",");
             
-                System.out.println(result[0]);
                 switch(result[0])
                 {
                     case "head":
                         try{
-                        Shop.createHead(result[1], Double.parseDouble(result[2]), Double.parseDouble(result[3]),
+                            Shop.createHead(result[1], Double.parseDouble(result[2]), Double.parseDouble(result[3]),
                             result[4], Boolean.parseBoolean(result[5]), Boolean.parseBoolean(result[6]));
-                        System.out.println("Head component read sucessfully");
+                            //System.out.println("Head component read sucessfully");
                         }
                         catch(Exception e)
                         {
@@ -121,10 +120,10 @@ public class IOFile {
                         break;
                     case "torso":
                         try{
-                        Shop.createTorso(result[1], Double.parseDouble(result[2]), Double.parseDouble(result[3]),
+                            Shop.createTorso(result[1], Double.parseDouble(result[2]), Double.parseDouble(result[3]),
                             result[4], Boolean.parseBoolean(result[5]), Boolean.parseBoolean(result[6]), 
                             Integer.parseInt(result[7]), Integer.parseInt(result[8]));
-                        System.out.println("torso read sucessfully");
+                            //System.out.println("torso read sucessfully");
                         }
                         catch(Exception e)
                         {
@@ -134,9 +133,9 @@ public class IOFile {
                         break;
                     case "arm":
                         try{
-                           Shop.createArm(result[1], Double.parseDouble(result[2]), Double.parseDouble(result[3]),
+                            Shop.createArm(result[1], Double.parseDouble(result[2]), Double.parseDouble(result[3]),
                             result[4], Boolean.parseBoolean(result[5]), Boolean.parseBoolean(result[6]), Double.parseDouble(result[7]));
-                           System.out.println("arm read sucessfully");
+                            //System.out.println("arm read sucessfully");
                         }
                         catch(Exception e)
                         {
@@ -146,10 +145,10 @@ public class IOFile {
                            break;
                     case "battery":
                         try{
-                        Shop.createBattery(result[1], Double.parseDouble(result[2]), Double.parseDouble(result[3]),
+                            Shop.createBattery(result[1], Double.parseDouble(result[2]), Double.parseDouble(result[3]),
                             result[4], Boolean.parseBoolean(result[5]), Boolean.parseBoolean(result[6]), 
                             Double.parseDouble(result[7]), Double.parseDouble(result[8]));
-                            System.out.println("battery read sucessfully");
+                            //System.out.println("battery read sucessfully");
                         }
                         catch(Exception e)
                         {
@@ -159,10 +158,10 @@ public class IOFile {
                         break;
                     case "locomotor":
                         try{
-                        Shop.createLocomotor(result[1], Double.parseDouble(result[2]), Double.parseDouble(result[3]),
+                            Shop.createLocomotor(result[1], Double.parseDouble(result[2]), Double.parseDouble(result[3]),
                             result[4], Boolean.parseBoolean(result[5]), Boolean.parseBoolean(result[6]), 
                             Double.parseDouble(result[7]), Double.parseDouble(result[8]));
-                            System.out.println("locomotor read sucessfully");
+                            //System.out.println("locomotor read sucessfully");
                         }
                         catch(Exception e)
                         {
@@ -180,17 +179,206 @@ public class IOFile {
         }
     }
     
+    public void writeModelFile()
+    {
+        int i;
+        openFileW("ModelFile.txt");
+        
+        RobotModel[] array = Shop.getRobotModels();
+        
+        for(i=0; i<array.length; i++)
+        {
+            if (array[i] != null)
+            {
+                outfile.format("%s,%d,%d,%d,%d,%d,%d,%d,%d\n", array[i].getName(), array[i].getTorso(), array[i].getBattery1(), array[i].getBattery2(),
+                               array[i].getBattery3(), array[i].getArm1(), array[i].getArm2(), array[i].getLocomotor(), array[i].getHead());
+            }
+        }
+        outfile.close();
+    }
+    
+    private void readModelFile()
+    {
+        try{
+            Scanner scanner = new Scanner(new FileReader("ModelFile.txt"));
+            
+            String line;
+            while(scanner.hasNextLine())
+            {
+                line = scanner.nextLine();
+                String[] result = line.split(",");
+                
+                try{
+                    Shop.createModel(result[0], Integer.parseInt(result[1]), Integer.parseInt(result[2]), Integer.parseInt(result[3]), Integer.parseInt(result[4]), 
+                                     Integer.parseInt(result[5]), Integer.parseInt(result[6]), Integer.parseInt(result[7]), Integer.parseInt(result[8]));
+                }
+                catch(Exception e){
+                    System.out.println("Model not read");
+                    System.out.println(e.getMessage());
+                }
+            }
+            scanner.close();
+        }
+        catch(Exception e){
+            System.out.println(e.getMessage());
+        }
+    }
+    
+    public void writeOrderFile()
+    {
+        int i;
+        openFileW("OrderFile.txt");
+        
+        Order[] array = Shop.getOrders();
+        
+        for(i=0; i<array.length; i++)
+        {
+            if (array[i] != null)
+            {
+                outfile.format("%d,%d,%d,%d,%.2f\n", array[i].getCustomer(), array[i].getEmployee(), array[i].getLineItem(), array[i].getQuantity(),
+                               array[i].getBill());
+            }
+        }
+        outfile.close();
+    }
+    
+    private void readOrderFile()
+    {
+        try{
+            Scanner scanner = new Scanner(new FileReader("OrderFile.txt"));
+            
+            String line;
+            while(scanner.hasNextLine())
+            {
+                line = scanner.nextLine();
+                String[] result = line.split(",");
+                
+                try{
+                    Shop.newOrder(Integer.parseInt(result[0]), Integer.parseInt(result[1]), Integer.parseInt(result[2]), Integer.parseInt(result[3]), 
+                                  Double.parseDouble(result[4]));
+                }
+                catch(Exception e){
+                    System.out.println("Order not read");
+                    System.out.println(e.getMessage());
+                }
+            }
+            scanner.close();
+        }
+        catch(Exception e){
+            System.out.println(e.getMessage());
+        }
+    }
+    
+    public void writeCustomerFile()
+    {
+        int i;
+        openFileW("CustomerFile.txt");
+        
+        Customer[] array = Shop.getCustomers();
+        
+        for(i=0; i<array.length; i++)
+        {
+            if (array[i] != null)
+            {
+                outfile.format("%s\n", array[i].getName());
+            }
+        }
+        outfile.close();
+    }
+    
+    public void readCustomerFile()
+    {
+        try{
+            Scanner scanner = new Scanner(new FileReader("CustomerFile.txt"));
+            
+            String line;
+            while(scanner.hasNextLine())
+            {
+                line = scanner.nextLine();
+                String[] result = line.split(",");
+                
+                try{
+                    Shop.newCustomer(result[0]);
+                }
+                catch(Exception e){
+                    System.out.println("Customer not read");
+                    System.out.println(e.getMessage());
+                }
+            }
+            scanner.close();
+        }
+        catch(Exception e){
+            System.out.println(e.getMessage());
+        }
+    }
+    
+    public void writeEmployeeFile()
+    {
+        int i;
+        openFileW("EmployeeFile.txt");
+        
+        Employee[] array = Shop.getEmployees();
+        
+        for(i=0; i<array.length; i++)
+        {
+            if (array[i] != null)
+            {
+                outfile.format("%s,%s\n", array[i].getName(), array[i].getType());
+            }
+        }
+        outfile.close();
+    }
+    
+    private void readEmployeeFile()
+    {
+        try{
+            Scanner scanner = new Scanner(new FileReader("EmployeeFile.txt"));
+            
+            String line;
+            while(scanner.hasNextLine())
+            {
+                line = scanner.nextLine();
+                String[] result = line.split(",");
+                
+                try{
+                    Shop.newEmployee(result[0], result[1]);
+                }
+                catch(Exception e){
+                    System.out.println("Employee not read");
+                    System.out.println(e.getMessage());
+                }
+            }
+            scanner.close();
+        }
+        catch(Exception e){
+            System.out.println(e.getMessage());
+        }
+    }
     
     private  void openFileW(String fileName)
     {
         try{
         outfile = new Formatter(fileName);
-        System.out.println("Open Outfile Successful");
+        //System.out.println("Open " + fileName+ " Successful");
         }
         catch(Exception e){
             System.out.println("File not Found");
         }
     }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
     /*private  void openFileR(String fileName)
     {
