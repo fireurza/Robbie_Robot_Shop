@@ -9,38 +9,24 @@ import java.lang.*;
  */
 public class IOFile { 
     
-<<<<<<< HEAD
-    private Scanner input;
-=======
->>>>>>> origin/Jonathan
     private Formatter outfile;
     
     public void readAll()
     {
-<<<<<<< HEAD
-        
-=======
         readComponentFile();
         readModelFile();
-        readCustomerFile();
-        readEmployeeFile();
-        readOrderFile();
->>>>>>> origin/Jonathan
     }
     
     public void writeAll()
     {
         writeComponentFile();
         writeModelFile();
-        writeCustomerFile();
-        writeEmployeeFile();
-        writeOrderFile();
     }
     
     public void writeComponentFile()
     {
         int i;
-        openFile("ComponentFile.txt");
+        openFileW("ComponentFile.txt");
         
         Component[][] array = Shop.robotParts;
         Head[] head = Shop.getHeadArray(); 
@@ -54,67 +40,52 @@ public class IOFile {
             if(head[i]!=null)
             {
                 
-                outfile.format("%s,%s,%.2f,%.2f,%s,%b,%b-", head[i].getType(), head[i].getName(), head[i].getWeight(), head[i].getPrice(),
+                outfile.format("%s,%s,%.2f,%.2f,%s,%b,%b\n", head[i].getType(), head[i].getName(), head[i].getWeight(), head[i].getPrice(),
                         head[i].getDescription(), head[i].getIsObsolete(), head[i].getIsApproved());
             }
             
         }   
-        outfile.format("\n");
+        //outfile.format("\n");
         for(i=0;i<torso.length; i++)
         {
             if(torso[i]!=null)
             {
-<<<<<<< HEAD
-                outfile.format("%s,%s,%f,%f,%s,%b,%b, %d, %d-", torso[i].getType(), torso[i].getName(), torso[i].getWeight(), torso[i].getPrice(),
-=======
                 outfile.format("%s,%s,%f,%f,%s,%b,%b,%d,%d\n", torso[i].getType(), torso[i].getName(), torso[i].getWeight(), torso[i].getPrice(),
->>>>>>> origin/Jonathan
                          torso[i].getDescription(), torso[i].getIsObsolete(), torso[i].getIsApproved(), 
                          torso[i].getBatteryCompartments(), torso[i].getArmSockets());     
             }            
         }
-        outfile.format("\n");
+        //outfile.format("\n");
         for(i=0;i<arm.length; i++)
         {
             if(arm[i]!=null)
             {
-                outfile.format("%s,%s,%.2f,%.2f,%s,%b,%b,%.2f-", arm[i].getType(), arm[i].getName(), arm[i].getWeight(), arm[i].getPrice(),
+                outfile.format("%s,%s,%.2f,%.2f,%s,%b,%b,%.2f\n", arm[i].getType(), arm[i].getName(), arm[i].getWeight(), arm[i].getPrice(),
                         arm[i].getDescription(), arm[i].getIsObsolete(), arm[i].getIsApproved(), arm[i].getPowerConsumptionRate());           
             }           
         }
-        outfile.format("\n");
+        //outfile.format("\n");
         for(i=0;i<battery.length; i++)
         {
             if(battery[i]!=null)
             {
-<<<<<<< HEAD
-                outfile.format("%s,%s,%.2f,%.2f,%s,%b,%b-", battery[i].getType(), battery[i].getName(), battery[i].getWeight(), battery[i].getPrice(),
-=======
                 outfile.format("%s,%s,%.2f,%.2f,%s,%b,%b,%.2f,%.2f\n", battery[i].getType(), battery[i].getName(), battery[i].getWeight(), battery[i].getPrice(),
->>>>>>> origin/Jonathan
                         battery[i].getDescription(), battery[i].getIsObsolete(), battery[i].getIsApproved(), battery[i].getEnergy(), battery[i].getMaxPower());
             }           
         }
-        outfile.format("\n");
+        //outfile.format("\n");
         for(i=0;i<loco.length; i++)
         {
             if(loco[i]!=null)
             {
-                outfile.format("%s,%s,%.2f,%.2f,%s,%b,%b,%.2f,%.2f-", loco[i].getType(), loco[i].getName(), loco[i].getWeight(), loco[i].getPrice(),
+                outfile.format("%s,%s,%.2f,%.2f,%s,%b,%b,%.2f,%.2f\n", loco[i].getType(), loco[i].getName(), loco[i].getWeight(), loco[i].getPrice(),
                         loco[i].getDescription(), loco[i].getIsObsolete(), loco[i].getIsApproved(), loco[i].getMaxSpeed(), loco[i].getPowerConsumtionRate());               
             }
         }
         outfile.close();
     }
     
-<<<<<<< HEAD
-    private  void openFile(String fileName)
-    {
-        try{
-        outfile = new Formatter(fileName);
-        System.out.println("Open Successful");
-=======
-    private void readComponentFile()
+    public void readComponentFile()
     {
         String line;
         
@@ -220,7 +191,7 @@ public class IOFile {
         outfile.close();
     }
     
-    private void readModelFile()
+    public void readModelFile()
     {
         try{
             Scanner scanner = new Scanner(new FileReader("ModelFile.txt"));
@@ -247,164 +218,17 @@ public class IOFile {
         }
     }
     
-    public void writeOrderFile()
-    {
-        int i;
-        openFileW("OrderFile.txt");
-        
-        Order[] array = Shop.getOrders();
-        
-        for(i=0; i<array.length; i++)
-        {
-            if (array[i] != null)
-            {
-                outfile.format("%d,%d,%d,%d,%.2f\n", array[i].getCustomer(), array[i].getEmployee(), array[i].getLineItem(), array[i].getQuantity(),
-                               array[i].getBill());
-            }
-        }
-        outfile.close();
-    }
-    
-    private void readOrderFile()
-    {
-        try{
-            Scanner scanner = new Scanner(new FileReader("OrderFile.txt"));
-            
-            String line;
-            while(scanner.hasNextLine())
-            {
-                line = scanner.nextLine();
-                String[] result = line.split(",");
-                
-                try{
-                    Shop.newOrder(Integer.parseInt(result[0]), Integer.parseInt(result[1]), Integer.parseInt(result[2]), Integer.parseInt(result[3]), 
-                                  Double.parseDouble(result[4]));
-                }
-                catch(Exception e){
-                    System.out.println("Order not read");
-                    System.out.println(e.getMessage());
-                }
-            }
-            scanner.close();
-        }
-        catch(Exception e){
-            System.out.println(e.getMessage());
-        }
-    }
-    
-    public void writeCustomerFile()
-    {
-        int i;
-        openFileW("CustomerFile.txt");
-        
-        Customer[] array = Shop.getCustomers();
-        
-        for(i=0; i<array.length; i++)
-        {
-            if (array[i] != null)
-            {
-                outfile.format("%s\n", array[i].getName());
-            }
-        }
-        outfile.close();
-    }
-    
-    public void readCustomerFile()
-    {
-        try{
-            Scanner scanner = new Scanner(new FileReader("CustomerFile.txt"));
-            
-            String line;
-            while(scanner.hasNextLine())
-            {
-                line = scanner.nextLine();
-                String[] result = line.split(",");
-                
-                try{
-                    Shop.newCustomer(result[0]);
-                }
-                catch(Exception e){
-                    System.out.println("Customer not read");
-                    System.out.println(e.getMessage());
-                }
-            }
-            scanner.close();
-        }
-        catch(Exception e){
-            System.out.println(e.getMessage());
-        }
-    }
-    
-    public void writeEmployeeFile()
-    {
-        int i;
-        openFileW("EmployeeFile.txt");
-        
-        Employee[] array = Shop.getEmployees();
-        
-        for(i=0; i<array.length; i++)
-        {
-            if (array[i] != null)
-            {
-                outfile.format("%s,%s\n", array[i].getName(), array[i].getType());
-            }
-        }
-        outfile.close();
-    }
-    
-    private void readEmployeeFile()
-    {
-        try{
-            Scanner scanner = new Scanner(new FileReader("EmployeeFile.txt"));
-            
-            String line;
-            while(scanner.hasNextLine())
-            {
-                line = scanner.nextLine();
-                String[] result = line.split(",");
-                
-                try{
-                    Shop.newEmployee(result[0], result[1]);
-                }
-                catch(Exception e){
-                    System.out.println("Employee not read");
-                    System.out.println(e.getMessage());
-                }
-            }
-            scanner.close();
-        }
-        catch(Exception e){
-            System.out.println(e.getMessage());
-        }
-    }
     
     private  void openFileW(String fileName)
     {
         try{
         outfile = new Formatter(fileName);
-        //System.out.println("Open " + fileName+ " Successful");
->>>>>>> origin/Jonathan
+        System.out.println("Open " + fileName+ " Successful");
         }
         catch(Exception e){
             System.out.println("File not Found");
         }
     }
-    
-<<<<<<< HEAD
-=======
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     /*private  void openFileR(String fileName)
     {
@@ -417,5 +241,4 @@ public class IOFile {
         }
     }*/
     
->>>>>>> origin/Jonathan
 }
