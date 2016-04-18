@@ -26,7 +26,7 @@ public class RRSCLIModelManager {
         if (input == 'S' || input == 's'){
             searchModels();
         }
-        if (input == 'B' || input == 'b'){
+        else if (input == 'B' || input == 'b'){
             browseModels();
         }
         else if (input == 'E' || input == 'e'){
