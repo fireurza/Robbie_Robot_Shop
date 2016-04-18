@@ -9,23 +9,18 @@ import java.lang.*;
  */
 public class IOFile { 
     
-<<<<<<< HEAD
     private Scanner input;
-=======
->>>>>>> origin/Jonathan
+
     private Formatter outfile;
     
     public void readAll()
     {
-<<<<<<< HEAD
-        
-=======
+
         readComponentFile();
         readModelFile();
         readCustomerFile();
         readEmployeeFile();
         readOrderFile();
->>>>>>> origin/Jonathan
     }
     
     public void writeAll()
@@ -64,11 +59,8 @@ public class IOFile {
         {
             if(torso[i]!=null)
             {
-<<<<<<< HEAD
-                outfile.format("%s,%s,%f,%f,%s,%b,%b, %d, %d-", torso[i].getType(), torso[i].getName(), torso[i].getWeight(), torso[i].getPrice(),
-=======
+
                 outfile.format("%s,%s,%f,%f,%s,%b,%b,%d,%d\n", torso[i].getType(), torso[i].getName(), torso[i].getWeight(), torso[i].getPrice(),
->>>>>>> origin/Jonathan
                          torso[i].getDescription(), torso[i].getIsObsolete(), torso[i].getIsApproved(), 
                          torso[i].getBatteryCompartments(), torso[i].getArmSockets());     
             }            
@@ -87,11 +79,7 @@ public class IOFile {
         {
             if(battery[i]!=null)
             {
-<<<<<<< HEAD
-                outfile.format("%s,%s,%.2f,%.2f,%s,%b,%b-", battery[i].getType(), battery[i].getName(), battery[i].getWeight(), battery[i].getPrice(),
-=======
                 outfile.format("%s,%s,%.2f,%.2f,%s,%b,%b,%.2f,%.2f\n", battery[i].getType(), battery[i].getName(), battery[i].getWeight(), battery[i].getPrice(),
->>>>>>> origin/Jonathan
                         battery[i].getDescription(), battery[i].getIsObsolete(), battery[i].getIsApproved(), battery[i].getEnergy(), battery[i].getMaxPower());
             }           
         }
@@ -107,13 +95,18 @@ public class IOFile {
         outfile.close();
     }
     
-<<<<<<< HEAD
+
     private  void openFile(String fileName)
     {
         try{
         outfile = new Formatter(fileName);
         System.out.println("Open Successful");
-=======
+        }
+        catch(FileNotFoundException e){
+            //TODO Do Something Here
+        }
+    }
+
     private void readComponentFile()
     {
         String line;
@@ -383,28 +376,11 @@ public class IOFile {
         try{
         outfile = new Formatter(fileName);
         //System.out.println("Open " + fileName+ " Successful");
->>>>>>> origin/Jonathan
         }
         catch(Exception e){
             System.out.println("File not Found");
         }
     }
-    
-<<<<<<< HEAD
-=======
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     /*private  void openFileR(String fileName)
     {
@@ -417,5 +393,4 @@ public class IOFile {
         }
     }*/
     
->>>>>>> origin/Jonathan
 }
