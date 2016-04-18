@@ -18,14 +18,14 @@ public class RRSCLICustomerManager {
         System.out.println("");
 //        System.out.println("(S)earch Customers");
         System.out.println("(B)rowse Customers");
-//        System.out.println("(E)dit Customers");
+//        System.out.println("(E)dit Customer");
         System.out.println("(N)ew Customer");
         System.out.println("E(x)it");
         int input = CLIinput.getChar(" Select Option ");
         if (input == 'S' || input == 's'){
             searchCustomers();
         }
-        if (input == 'B' || input == 'b'){
+        else if (input == 'B' || input == 'b'){
             browseCustomers();
         }
         else if (input == 'E' || input == 'e'){
