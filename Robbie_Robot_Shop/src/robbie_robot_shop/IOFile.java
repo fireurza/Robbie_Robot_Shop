@@ -49,7 +49,7 @@ public class IOFile {
         {
             if(torso[i]!=null)
             {
-                outfile.format("%s,%s,%f,%f,%s,%b,%b, %d, %d\n", torso[i].getType(), torso[i].getName(), torso[i].getWeight(), torso[i].getPrice(),
+                outfile.format("%s,%s,%f,%f,%s,%b,%b,%d,%d\n", torso[i].getType(), torso[i].getName(), torso[i].getWeight(), torso[i].getPrice(),
                          torso[i].getDescription(), torso[i].getIsObsolete(), torso[i].getIsApproved(), 
                          torso[i].getBatteryCompartments(), torso[i].getArmSockets());     
             }            
@@ -68,7 +68,7 @@ public class IOFile {
         {
             if(battery[i]!=null)
             {
-                outfile.format("%s,%s,%.2f,%.2f,%s,%b,%b\n", battery[i].getType(), battery[i].getName(), battery[i].getWeight(), battery[i].getPrice(),
+                outfile.format("%s,%s,%.2f,%.2f,%s,%b,%b,%.2f,%.2f\n", battery[i].getType(), battery[i].getName(), battery[i].getWeight(), battery[i].getPrice(),
                         battery[i].getDescription(), battery[i].getIsObsolete(), battery[i].getIsApproved(), battery[i].getEnergy(), battery[i].getMaxPower());
             }           
         }
@@ -104,30 +104,71 @@ public class IOFile {
                 line = scanner.nextLine();
                 String[] result = line.split(",");
             
+                System.out.println(result[0]);
                 switch(result[0])
                 {
                     case "head":
+                        try{
                         Shop.createHead(result[1], Double.parseDouble(result[2]), Double.parseDouble(result[3]),
                             result[4], Boolean.parseBoolean(result[5]), Boolean.parseBoolean(result[6]));
+                        System.out.println("Head component read sucessfully");
+                        }
+                        catch(Exception e)
+                        {
+                            System.out.println("Head not read");
+                            System.out.println(e.getMessage());
+                        }
                         break;
                     case "torso":
+                        try{
                         Shop.createTorso(result[1], Double.parseDouble(result[2]), Double.parseDouble(result[3]),
                             result[4], Boolean.parseBoolean(result[5]), Boolean.parseBoolean(result[6]), 
                             Integer.parseInt(result[7]), Integer.parseInt(result[8]));
+                        System.out.println("torso read sucessfully");
+                        }
+                        catch(Exception e)
+                        {
+                            System.out.println("torso not read");
+                            System.out.println(e.getMessage());
+                        }
                         break;
                     case "arm":
+                        try{
                            Shop.createArm(result[1], Double.parseDouble(result[2]), Double.parseDouble(result[3]),
                             result[4], Boolean.parseBoolean(result[5]), Boolean.parseBoolean(result[6]), Double.parseDouble(result[7]));
+                           System.out.println("arm read sucessfully");
+                        }
+                        catch(Exception e)
+                        {
+                            System.out.println("arm not read");
+                            System.out.println(e.getMessage());
+                        }
                            break;
                     case "battery":
+                        try{
                         Shop.createBattery(result[1], Double.parseDouble(result[2]), Double.parseDouble(result[3]),
                             result[4], Boolean.parseBoolean(result[5]), Boolean.parseBoolean(result[6]), 
-                            Integer.parseInt(result[7]), Integer.parseInt(result[8]));
+                            Double.parseDouble(result[7]), Double.parseDouble(result[8]));
+                            System.out.println("battery read sucessfully");
+                        }
+                        catch(Exception e)
+                        {
+                            System.out.println("battery not read");
+                            System.out.println(e.getMessage());
+                        }
                         break;
                     case "locomotor":
+                        try{
                         Shop.createLocomotor(result[1], Double.parseDouble(result[2]), Double.parseDouble(result[3]),
                             result[4], Boolean.parseBoolean(result[5]), Boolean.parseBoolean(result[6]), 
-                            Integer.parseInt(result[7]), Integer.parseInt(result[8]));
+                            Double.parseDouble(result[7]), Double.parseDouble(result[8]));
+                            System.out.println("locomotor read sucessfully");
+                        }
+                        catch(Exception e)
+                        {
+                            System.out.println("locomotor not read");
+                            System.out.println(e.getMessage());
+                        }
                         break;
                 }
             }

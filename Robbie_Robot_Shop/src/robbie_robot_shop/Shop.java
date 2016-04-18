@@ -43,7 +43,7 @@ public class Shop {
         Torso T1 = new Torso();
         T1.setPartNumber(Component.getNumberOfParts() + 1); 
         Component.incrementNumberOfParts();
-        T1.setType("Torso");
+        T1.setType("torso");
         T1.setName(Tname);
         T1.setWeight(Tweight);
         T1.setPrice(Tprice);
@@ -53,6 +53,8 @@ public class Shop {
         T1.setBatteryCompartments(TbatteryCompartments);
         T1.setArmSockets(TarmSockets);
         TorsoArray[torsoCounter++] = T1;
+        IOFile file = new IOFile();
+        file.writeComponentFile();
     }
     public static void createLocomotor(String Lname, double Lweight, double Lprice, String Ldescription, boolean Lobsolete, boolean Lapproved, double LmaxSpeed, double LpowerConsumptionRate){
         Locomotor L1 = new Locomotor();
@@ -68,6 +70,8 @@ public class Shop {
         L1.setMaxSpeed(LmaxSpeed);
         L1.setPowerConsumptionRate(LpowerConsumptionRate);
         LocomotorArray[locomotorCounter++] = L1;
+        IOFile file = new IOFile();
+        file.writeComponentFile();
     }
     public static void createBattery(String Bname, double Bweight, double Bprice, String Bdescription, boolean Bobsolete, boolean Bapproved, double Benergy, double BmaxPower){
         Battery B1 = new Battery();
@@ -83,6 +87,8 @@ public class Shop {
         B1.setEnergy(Benergy);
         B1.setMaxPower(BmaxPower);
         BatteryArray[batteryCounter++] = B1;
+        IOFile file = new IOFile();
+        file.writeComponentFile();
     }
     public static void createHead(String Hname, double Hweight, double Hprice, String Hdescription, boolean Hobsolete, boolean Happroved){
         Head H1 = new Head();
@@ -96,6 +102,8 @@ public class Shop {
         H1.setObsolete(Hobsolete);
         H1.setApproved(Happroved);
         HeadArray[headCounter++] = H1;
+        IOFile file = new IOFile();
+        file.writeComponentFile();
     }
     public static void createArm(String Aname, double Aweight, double Aprice, String Adescription, boolean Aobsolete, boolean Aapproved, double ApowerConsumptionRate){
         Arm A1 = new Arm();
@@ -110,6 +118,8 @@ public class Shop {
         A1.setApproved(Aapproved);
         A1.setPowerConsumptionRate(ApowerConsumptionRate);
         ArmArray[armCounter++] = A1;
+        IOFile file = new IOFile();
+        file.writeComponentFile();
     }
     
     public static void editPart(){

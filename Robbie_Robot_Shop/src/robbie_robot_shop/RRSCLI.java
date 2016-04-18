@@ -83,14 +83,14 @@ public class RRSCLI {
             Shop.createHead("testHead", 99.99, 99.99, "testHead Description", false, true);
         }
         if (Shop.batteryCounter == 0){
-            Shop.createBattery("testBattery", 99.99, 99.99, "testBattery Description", false, true, 99.99, 99.99);
+            Shop.createBattery("testBattery", 99.99, 99.99, "testBattery Description", false, true,99.99,99.99);
         }
         if (Shop.locomotorCounter == 0){
             Shop.createLocomotor("testLocomotor", 99.99, 99.99, "testLocomotor Description", false, true, 99.99, 99.99);
         }
         // make test model
         if (Shop.modelCounter == 0){
-            Shop.createModel("testModel", 0, 3, 3, 3, 1, 1, 4, 2);
+            Shop.createModel("testModel",0,3,3,3,1,1,4,2);
         }
         // make test customer
         if (Shop.customerCounter == 0){
@@ -103,8 +103,10 @@ public class RRSCLI {
         }
         // make test order
         if (Shop.orderCounter == 0){
-            Shop.newOrder(0, 0, 0, 99);
+            Shop.newOrder(0, 0, 0, 99, 1.0);
         }
+        IOFile file = new IOFile();
+        file.writeAll();
         
         System.out.println("TEST parts, model, customer, & employees created");
     }
