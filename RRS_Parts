@@ -1,0 +1,10 @@
+name,partNumber,type,weight,price,description,isObsolete,isApproved,extraInformation
+testTorso,1,torso,5,5,Torso for testing,false,false,3,2
+testHead,2,head,3,5,Head for testing,false,false
+testArm,3,arm,3,5,Arm for testing,false,false,1
+testBattery,4,battery,1,5,Battery for testing,false,false,20,20
+testLocomotor,5,locomotor,10,5,Locomotor for testing,false,false,10,200
+TypicalTentacle,6,arm,22.5,110.64,Joint free fluid movement device with suction cup end effector,false,true,10
+PowerHouse,7,arm,65.0,247.75,Massive but slow crushing hydraulic power shear end effector,false,true,50
+TheClamps,8,arm,30,180,When all else fails give them the clamps THE CLAMPS,false,false,30
+
