@@ -110,10 +110,12 @@ public class RRSCLI {
         if (Shop.orderCounter == 0){
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             Shop.newOrder(0, 0, 0, 99, 99);
 =======
+=======
+>>>>>>> origin/TESTING
             Shop.newOrder(0, 0, 0, 99, 1.0);
->>>>>>> origin/Jonathan
         }
         IOFile file = new IOFile();
         file.writeAll();
