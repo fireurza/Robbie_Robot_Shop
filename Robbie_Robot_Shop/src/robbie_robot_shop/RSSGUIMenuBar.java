@@ -14,36 +14,23 @@ public class RSSGUIMenuBar extends JFrame implements MenuListener, KeyListener, 
 {
     JMenuBar menuBar;
     JMenu shop, partOption, modelOption, orderOption, customerOption, employeeOption, reportOption;
-<<<<<<< HEAD
-    JMenuItem searchParts, browseParts, editParts, newParts, exit;
-=======
     JMenuItem searchParts, browseParts, editParts, newParts, exit,testOption;
->>>>>>> origin/Gasser
     JMenuItem searchModels, browseModels, editModels, newModels;
     JMenuItem searchOrders, browseOrders, editOrders, newOrders;
     JMenuItem searchCustomers, browseCustomers, editCustomer, newCustomer;
     JMenuItem searchEmployees, browseEmployees, editEmployee, newEmployee;
     JMenuItem openReport, searchReport;
-<<<<<<< HEAD
-    
-=======
     static Object[][] partsData=new Object[30][9];
     static Object[][] modelsData=new Object[30][12];
     static Object[][] ordersData=new Object[30][8];
     static Object[][] customersData=new Object[30][4];
     static Object[][] employeesData=new Object[30][3];
    
->>>>>>> origin/Gasser
     public static void main(String[] args)
     {
         RSSGUIMenuBar fr = new RSSGUIMenuBar();
         fr.setVisible(true); 
     }
-<<<<<<< HEAD
-    
-=======
-   
->>>>>>> origin/Gasser
     public RSSGUIMenuBar()
     {
         setLayout(new FlowLayout());
@@ -178,8 +165,6 @@ public class RSSGUIMenuBar extends JFrame implements MenuListener, KeyListener, 
         reportOption.add(searchReport);
         reportOption.add(openReport);
         
-<<<<<<< HEAD
-=======
         // creat test menu item
         testOption = new JMenuItem("Test");
         testOption.setMnemonic(KeyEvent.VK_X);
@@ -187,7 +172,6 @@ public class RSSGUIMenuBar extends JFrame implements MenuListener, KeyListener, 
         shop.addSeparator();
         shop.add(testOption);
         
->>>>>>> origin/Gasser
         // creat exit menu item
         exit = new JMenuItem("Exit");
         exit.setMnemonic(KeyEvent.VK_X);
@@ -272,14 +256,12 @@ public class RSSGUIMenuBar extends JFrame implements MenuListener, KeyListener, 
             a.setVisible(true);
             setLayout(new FlowLayout());
             setSize(898,698);
-<<<<<<< HEAD
             setTitle("Test2");
             //setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
             setLocationRelativeTo(null);
         
             JRadioButton testButton = new JRadioButton("blagh");
             add(testButton);
-=======
             setTitle("Browse Parts");
             //setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
             setLocationRelativeTo(null);
@@ -306,7 +288,6 @@ public class RSSGUIMenuBar extends JFrame implements MenuListener, KeyListener, 
         setLayout(new GridLayout());
         add(scrollPane);
           
->>>>>>> origin/Gasser
         }
         // edit parts
         if(e.getSource().equals(editParts))
@@ -356,7 +337,6 @@ public class RSSGUIMenuBar extends JFrame implements MenuListener, KeyListener, 
         // browse model
         if(e.getSource().equals(browseModels))
         {
-<<<<<<< HEAD
             JPanel f = new JPanel();
             getContentPane().removeAll();
             f.setVisible(true);
@@ -368,7 +348,6 @@ public class RSSGUIMenuBar extends JFrame implements MenuListener, KeyListener, 
         
             JRadioButton testButton = new JRadioButton("TEST6");
             add(testButton);
-=======
             JPanel a = new JPanel();
             getContentPane().removeAll();
             a.setVisible(true);
@@ -397,7 +376,6 @@ public class RSSGUIMenuBar extends JFrame implements MenuListener, KeyListener, 
         setLayout(new GridLayout());
         setLocationRelativeTo(null);
         add(scrollPane);
->>>>>>> origin/Gasser
         }
         // edit model
         if(e.getSource().equals(editModels))
@@ -447,7 +425,6 @@ public class RSSGUIMenuBar extends JFrame implements MenuListener, KeyListener, 
         // browse order
         if(e.getSource().equals(browseOrders))
         {
-<<<<<<< HEAD
             JPanel f = new JPanel();
             getContentPane().removeAll();
             f.setVisible(true);
@@ -459,7 +436,6 @@ public class RSSGUIMenuBar extends JFrame implements MenuListener, KeyListener, 
         
             JRadioButton testButton = new JRadioButton("TEST10");
             add(testButton);
-=======
             JPanel a = new JPanel();
             getContentPane().removeAll();
             a.setVisible(true);
@@ -488,7 +464,6 @@ public class RSSGUIMenuBar extends JFrame implements MenuListener, KeyListener, 
         setLayout(new GridLayout());
         setLocationRelativeTo(null);
         add(scrollPane);
->>>>>>> origin/Gasser
         }
         // edit order
         if(e.getSource().equals(editOrders))
@@ -538,7 +513,6 @@ public class RSSGUIMenuBar extends JFrame implements MenuListener, KeyListener, 
         // browse customer
         if(e.getSource().equals(browseCustomers))
         {
-<<<<<<< HEAD
             JPanel f = new JPanel();
             getContentPane().removeAll();
             f.setVisible(true);
@@ -550,7 +524,7 @@ public class RSSGUIMenuBar extends JFrame implements MenuListener, KeyListener, 
         
             JRadioButton testButton = new JRadioButton("TEST14");
             add(testButton);
-=======
+            
             JPanel a = new JPanel();
             getContentPane().removeAll();
             a.setVisible(true);
@@ -579,7 +553,6 @@ public class RSSGUIMenuBar extends JFrame implements MenuListener, KeyListener, 
         setLayout(new GridLayout());
         setLocationRelativeTo(null);
         add(scrollPane);
->>>>>>> origin/Gasser
         }
         // edit customer
         if(e.getSource().equals(editCustomer))
@@ -629,7 +602,6 @@ public class RSSGUIMenuBar extends JFrame implements MenuListener, KeyListener, 
         // browse employee
         if(e.getSource().equals(browseEmployees))
         {
-<<<<<<< HEAD
             JPanel f = new JPanel();
             getContentPane().removeAll();
             f.setVisible(true);
@@ -641,7 +613,6 @@ public class RSSGUIMenuBar extends JFrame implements MenuListener, KeyListener, 
         
             JRadioButton testButton = new JRadioButton("TEST18");
             add(testButton);
-=======
             JPanel a = new JPanel();
             getContentPane().removeAll();
             a.setVisible(true);
@@ -670,7 +641,6 @@ public class RSSGUIMenuBar extends JFrame implements MenuListener, KeyListener, 
         setLayout(new GridLayout());
         setLocationRelativeTo(null);
         add(scrollPane);
->>>>>>> origin/Gasser
         }
         // edit employee
         if(e.getSource().equals(editEmployee))
@@ -733,8 +703,6 @@ public class RSSGUIMenuBar extends JFrame implements MenuListener, KeyListener, 
             add(testButton);
         }
         
-<<<<<<< HEAD
-=======
         if(e.getSource().equals(testOption))
         {
             //Creating Test Data
@@ -745,7 +713,6 @@ public class RSSGUIMenuBar extends JFrame implements MenuListener, KeyListener, 
             
         }
         
->>>>>>> origin/Gasser
         
     }
 

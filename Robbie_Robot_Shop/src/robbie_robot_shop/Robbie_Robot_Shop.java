@@ -32,9 +32,7 @@ public class Robbie_Robot_Shop extends JFrame {
     
     
     
-<<<<<<< HEAD
     public static void main(String[] args) {
-=======
     /*public static void main(String[] args) {
 >>>>>>> origin/Gasser
 //        LabelFrame labelFrame = new LabelFrame();
@@ -48,6 +46,6 @@ public class Robbie_Robot_Shop extends JFrame {
     }
 =======
     }*/
->>>>>>> origin/Gasser
     
+}
 }
