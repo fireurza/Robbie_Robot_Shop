@@ -8,3 +8,4 @@ arm,testArm,99.99,99.99,testArm Description,false,true,99.99
 battery,testBattery,99.99,99.99,testBattery Description,false,true,99.99,99.99
 
 locomotor,testLocomotor,99.99,99.99,testLocomotor Description,false,true,99.99,99.99
+locomotor,SpeedRunner,10.00,485.92,Makes you go Fast As S%#t,false,false,5.00,50.00

@@ -3,6 +3,7 @@ package robbie_robot_shop;
 import javax.swing.*;
 import java.awt.event.*;
 import java.awt.*;
+import static java.awt.Component.LEFT_ALIGNMENT;
 import javax.swing.event.*;
 
 
@@ -12,6 +13,7 @@ import javax.swing.event.*;
  */
 public class RSSGUIMenuBar extends JFrame implements MenuListener, KeyListener,  ActionListener
 {
+    IOFile file = new IOFile();
     JMenuBar menuBar;
     JMenu shop, partOption, modelOption, orderOption, customerOption, employeeOption, reportOption;
     JMenuItem searchParts, browseParts, editParts, newParts, exit,testOption;
@@ -93,6 +95,8 @@ public class RSSGUIMenuBar extends JFrame implements MenuListener, KeyListener, 
    
     public static void main(String[] args)
     {
+        IOFile file = new IOFile();
+        file.readAll();
         RSSGUIMenuBar fr = new RSSGUIMenuBar();
         fr.setVisible(true); 
         
@@ -358,6 +362,7 @@ public class RSSGUIMenuBar extends JFrame implements MenuListener, KeyListener, 
     {
         if(e.getSource().equals(exit))
         {
+            file.writeAll();
             System.exit(0);
         }
         // search parts
