@@ -42,4 +42,13 @@ public class RSSGUIOrderManager {
             }
         }
     }
+
+    static void createNewOrder() {
+        int cnum = Integer.parseInt(RSSGUIMenuBar.custNum.getText());
+        int snum = Integer.parseInt(RSSGUIMenuBar.salNum.getText());
+        int rmod =  Integer.parseInt(RSSGUIMenuBar.robNum.getText());
+        int q =  Integer.parseInt(RSSGUIMenuBar.quantity.getText());
+        Shop.newOrder(cnum, snum, rmod, q, q*7);
+    }
+
 }

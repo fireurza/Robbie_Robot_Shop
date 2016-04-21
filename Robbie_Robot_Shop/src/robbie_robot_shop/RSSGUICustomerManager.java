@@ -27,4 +27,11 @@ public class RSSGUICustomerManager {
             }
         }
     }
+
+    static void createNewCustomer() {
+        
+        String cname = RSSGUIMenuBar.cc.getText();
+        
+        Shop.newCustomer(cname);
+        }
 }

@@ -65,5 +65,24 @@ public class RSSGUIPartManager extends JFrame {
                 }
             }
         
+        
     }
+            public static void createNewPart(int PartType){
+            
+        String pname = RSSGUIMenuBar.pName.getText();
+        double weight = Double.parseDouble(RSSGUIMenuBar.pWeight.getText());
+        double price =  Double.parseDouble(RSSGUIMenuBar.pPrice.getText());
+        String description = RSSGUIMenuBar.pDesc.getText();
+        String abs = RSSGUIMenuBar.pAbs.getText();
+        String aprv = RSSGUIMenuBar.pAprv.getText();
+        boolean obsolete=false;
+        boolean approved = false;
+        
+        if(abs.equals("y")||abs.equals("Y"))
+            obsolete = true;
+        if(aprv.equals("y")||aprv.equals("Y"))
+            approved = true;
+            
+        Shop.createHead(pname, weight, price, description, obsolete, approved);
+            }
 }

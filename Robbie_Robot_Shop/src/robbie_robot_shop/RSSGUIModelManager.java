@@ -41,4 +41,12 @@ public class RSSGUIModelManager {
             }
         }
     }
-}
+
+    static void createNewModel() {
+        String mname = RSSGUIMenuBar.modName.getText();
+        int tnum = Integer.parseInt(RSSGUIMenuBar.torsNum.getText());
+        int lnum =  Integer.parseInt(RSSGUIMenuBar.locNum.getText());
+        int hnum =  Integer.parseInt(RSSGUIMenuBar.headNum.getText());
+        Shop.createModel(mname, tnum, 1, 2, 3, 1, 2, lnum, hnum);
+    }
+    }

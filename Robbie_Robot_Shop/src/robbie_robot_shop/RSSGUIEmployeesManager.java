@@ -25,4 +25,12 @@ public class RSSGUIEmployeesManager {
             }
         }
     }
+
+    static void createNewEmployee() {
+         String empName = RSSGUIMenuBar.empName.getText();
+        String tt=RSSGUIMenuBar.emptype.getText();
+        Shop.newEmployee(empName+tt, tt);
+    
+    }
+    
 }

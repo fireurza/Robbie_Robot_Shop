@@ -32,9 +32,7 @@ public class Robbie_Robot_Shop extends JFrame {
     
     
     
-    public static void main(String[] args) {
     /*public static void main(String[] args) {
->>>>>>> origin/Gasser
 //        LabelFrame labelFrame = new LabelFrame();
 //        labelFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 //        labelFrame.setSize(400,300);
@@ -42,10 +40,6 @@ public class Robbie_Robot_Shop extends JFrame {
 
         // TODO display intro logo and loading screen if needed
         // TODO Display Main Menu
-<<<<<<< HEAD
-    }
-=======
     }*/
     
-}
 }

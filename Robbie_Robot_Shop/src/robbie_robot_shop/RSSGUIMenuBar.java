@@ -20,6 +20,69 @@ public class RSSGUIMenuBar extends JFrame implements MenuListener, KeyListener, 
     JMenuItem searchCustomers, browseCustomers, editCustomer, newCustomer;
     JMenuItem searchEmployees, browseEmployees, editEmployee, newEmployee;
     JMenuItem openReport, searchReport;
+    
+    
+    //Radio buttons for new parts
+    JRadioButton torsoButton = new JRadioButton("New Torso");
+    JButton nextPage=new JButton("Next");
+    JRadioButton headButton = new JRadioButton("New Head");
+    JRadioButton armButton = new JRadioButton("New Arm");
+    JRadioButton locoButton = new JRadioButton("New Locomotor");
+    
+    
+    
+    
+        //New pages buttons
+        JButton nextPage2=new JButton("Next");
+        JButton modelSubmitPage=new JButton("Create Model");
+        JButton orderSubmitPage=new JButton("Create Order");
+        JButton custSubmitPage=new JButton("Create Customer");
+        JButton empSubmitPage=new JButton("Create Employee");
+        
+        JLabel mName = new JLabel("Model name:");
+        static JTextField modName = new JTextField(20);
+        JLabel tNum = new JLabel("Torso number:");
+        static JTextField torsNum = new JTextField(20);
+        JLabel lNum = new JLabel("Loco number:");
+        static JTextField locNum = new JTextField(20);
+        JLabel hNum = new JLabel("Head number:");
+        static JTextField headNum = new JTextField(20);
+        
+        JLabel name = new JLabel("Part name:");
+        static JTextField pName = new JTextField(20);
+        JLabel weight=new JLabel("Weight:");
+        static JTextField pWeight = new JTextField(20);
+        JLabel price=new JLabel("Price:");
+        static JTextField pPrice = new JTextField(20);
+        JLabel desc=new JLabel("Description:");
+        static JTextField pDesc = new JTextField(20);
+        JLabel abs=new JLabel("Absolete part:");
+        static JTextField pAbs = new JTextField(20);
+        JLabel aprv=new JLabel("Approved:");
+        static JTextField pAprv = new JTextField(20);
+        JLabel batteries=new JLabel("No. of batteries:");
+        static JTextField pBatteries = new JTextField(20);
+        JLabel armSockets=new JLabel("Arm Sockets:");
+        static JTextField pArmSockets = new JTextField(20);
+
+        
+        JLabel cNum=new JLabel("Customer Number:");
+        static JTextField custNum = new JTextField(20);
+        JLabel sNum=new JLabel("Sales Associate Number:");
+        static JTextField salNum = new JTextField(20);
+        JLabel rNum=new JLabel("Robot Model:");
+        static JTextField robNum = new JTextField(20);
+        JLabel q=new JLabel("Quantity required:");
+        static JTextField quantity = new JTextField(20);
+
+        JLabel ccName=new JLabel("Customer Name:");
+        static JTextField cc = new JTextField(20);
+         
+        JLabel emp=new JLabel("Employee Name:");
+        static JTextField empName = new JTextField(20);
+        JLabel tt=new JLabel("Customer Type:");
+        static JTextField emptype = new JTextField(20);
+        
     static Object[][] partsData=new Object[30][9];
     static Object[][] modelsData=new Object[30][12];
     static Object[][] ordersData=new Object[30][8];
@@ -30,12 +93,41 @@ public class RSSGUIMenuBar extends JFrame implements MenuListener, KeyListener, 
     {
         RSSGUIMenuBar fr = new RSSGUIMenuBar();
         fr.setVisible(true); 
+        
     }
+   
     public RSSGUIMenuBar()
     {
+        //Radio buttons for new parts
+        torsoButton.setFont(new Font("Serif", Font.PLAIN, 24));
+        torsoButton.addActionListener(this);
+        torsoButton.setMnemonic(KeyEvent.VK_B);
+        torsoButton.setActionCommand("torso");
+        headButton.setFont(new Font("Serif", Font.PLAIN, 24));
+        headButton.addActionListener(this);
+        armButton.setFont(new Font("Serif", Font.PLAIN, 24));
+        armButton.addActionListener(this);
+        locoButton.setFont(new Font("Serif", Font.PLAIN, 24));
+        locoButton.addActionListener(this);
+        nextPage.setFont(new Font("Serif", Font.PLAIN, 24));
+        nextPage.setEnabled(false);
+        nextPage.setActionCommand("Next");
+        nextPage.addActionListener(this);
+            
+        nextPage2.addActionListener(this);
+        modelSubmitPage.addActionListener(this);
+        orderSubmitPage.addActionListener(this);
+        custSubmitPage.addActionListener(this);
+        empSubmitPage.addActionListener(this);  
+            
+            
+            
+        
+        
         setLayout(new FlowLayout());
         setSize(900,700);
         setTitle("Robbie Robot Shop");
+        
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
         
@@ -47,19 +139,25 @@ public class RSSGUIMenuBar extends JFrame implements MenuListener, KeyListener, 
         
         //build the first heading on menu bar
         shop = new JMenu("Shop");
+        shop.setFont(new Font("Serif", Font.PLAIN, 24));
       // shop.addMenuListener(new thisMenuListener());
         menuBar.add(shop);
         
         //sub menu partOption
         partOption = new JMenu("Parts");
+        partOption.setFont(new Font("Serif", Font.PLAIN, 24));
         //partOption.addMenuListener(new thisMenuListener());
         shop.add(partOption);
         
         // sub menus of Parts
         searchParts = new JMenuItem("Search Parts");
+        searchParts.setFont(new Font("Serif", Font.PLAIN, 22));
         browseParts = new JMenuItem("Browse Parts");
+        browseParts.setFont(new Font("Serif", Font.PLAIN, 22));
         editParts = new JMenuItem("Edit Part");
+        editParts.setFont(new Font("Serif", Font.PLAIN, 22));
         newParts = new JMenuItem("New Part");
+        newParts.setFont(new Font("Serif", Font.PLAIN, 22));
                      //new JMenuItem("SearchParts", new ImageIcon("images/image.gif));
         searchParts.addActionListener(this);
         browseParts.addActionListener(this);
@@ -73,14 +171,19 @@ public class RSSGUIMenuBar extends JFrame implements MenuListener, KeyListener, 
         
         // sub menu modelOption
         modelOption = new JMenu("Models");
+        modelOption.setFont(new Font("Serif", Font.PLAIN, 24));
       //  modelOption.addMenuListener(new thisMenuListener());
         shop.add(modelOption);
         
         // sub menus of Models
         searchModels = new JMenuItem("Search Models");
+        searchModels.setFont(new Font("Serif", Font.PLAIN, 22));
         browseModels = new JMenuItem("Browse Models");
+        browseModels.setFont(new Font("Serif", Font.PLAIN, 22));
         editModels = new JMenuItem("Edit Model");
+        editModels.setFont(new Font("Serif", Font.PLAIN, 22));
         newModels = new JMenuItem("New Model");
+        newModels.setFont(new Font("Serif", Font.PLAIN, 22));
                      //new JMenuItem("SearchModels", new ImageIcon("images/image.gif));
         searchModels.addActionListener(this);
         browseModels.addActionListener(this);
@@ -93,14 +196,19 @@ public class RSSGUIMenuBar extends JFrame implements MenuListener, KeyListener, 
         
         // sub menu orderOption
         orderOption = new JMenu("Orders");
+        orderOption.setFont(new Font("Serif", Font.PLAIN, 24));
       //  orderOption.addMenuListener(new thisMenuListener());
         shop.add(orderOption);
         
         // sub menus of Orders
         searchOrders = new JMenuItem("Search Orders");
+        searchOrders.setFont(new Font("Serif", Font.PLAIN, 22));
         browseOrders = new JMenuItem("Browse Orders");
+        browseOrders.setFont(new Font("Serif", Font.PLAIN, 22));
         editOrders = new JMenuItem("Edit Order");
+        editOrders.setFont(new Font("Serif", Font.PLAIN, 22));
         newOrders = new JMenuItem("New Order");
+        newOrders.setFont(new Font("Serif", Font.PLAIN, 22));
                      //new JMenuItem("Search Orders", new ImageIcon("images/image.gif));
         searchOrders.addActionListener(this);
         browseOrders.addActionListener(this);
@@ -113,14 +221,19 @@ public class RSSGUIMenuBar extends JFrame implements MenuListener, KeyListener, 
         
         //sub menu customerOption
         customerOption = new JMenu("Customers");
+        customerOption.setFont(new Font("Serif", Font.PLAIN, 24));
       //  customerOption.addMenuListener(new thisMenuListener());
         shop.add(customerOption);
         
         // sub menus of Customers
         searchCustomers = new JMenuItem("Search Customers");
+        searchCustomers.setFont(new Font("Serif", Font.PLAIN, 22));
         browseCustomers = new JMenuItem("Browse Customers");
+        browseCustomers.setFont(new Font("Serif", Font.PLAIN, 22));
         editCustomer = new JMenuItem("Edit Customer");
+        editCustomer.setFont(new Font("Serif", Font.PLAIN, 22));
         newCustomer = new JMenuItem("New Customer");
+        newCustomer.setFont(new Font("Serif", Font.PLAIN, 22));
                      //new JMenuItem("Search Customers", new ImageIcon("images/image.gif));
         searchCustomers.addActionListener(this);
         browseCustomers.addActionListener(this);
@@ -133,14 +246,19 @@ public class RSSGUIMenuBar extends JFrame implements MenuListener, KeyListener, 
         
         // sub menu employeeOption
         employeeOption = new JMenu("Employees");
+        employeeOption.setFont(new Font("Serif", Font.PLAIN, 24));
       //  employeeOption.addMenuListener(new thisMenuListener());
         shop.add(employeeOption);
         
         // sub menus of Employees
         searchEmployees = new JMenuItem("Search Employees");
+        searchEmployees.setFont(new Font("Serif", Font.PLAIN, 22));
         browseEmployees = new JMenuItem("Browse Employees");
+        browseEmployees.setFont(new Font("Serif", Font.PLAIN, 22));
         editEmployee = new JMenuItem("Edit Employee");
+        editEmployee.setFont(new Font("Serif", Font.PLAIN, 22));
         newEmployee = new JMenuItem("New Employee");
+        newEmployee.setFont(new Font("Serif", Font.PLAIN, 22));
                      //new JMenuItem("Search Employees", new ImageIcon("images/image.gif));
         searchEmployees.addActionListener(this);
         browseEmployees.addActionListener(this);
@@ -153,12 +271,15 @@ public class RSSGUIMenuBar extends JFrame implements MenuListener, KeyListener, 
         
         // sub menu reportOption
         reportOption = new JMenu("Reports");
+        reportOption.setFont(new Font("Serif", Font.PLAIN, 24));
       //  reportOption.addMenuListener(new thisMenuListener());
         shop.add(reportOption);
         
         // sub menus of Reports
         searchReport = new JMenuItem("Search Reports");
+        searchReport.setFont(new Font("Serif", Font.PLAIN, 22));
         openReport = new JMenuItem("Open Report");
+        openReport.setFont(new Font("Serif", Font.PLAIN, 22));
                      //new JMenuItem("Search Reports", new ImageIcon("images/image.gif));
         searchReport.addActionListener(this);
         openReport.addActionListener(this);
@@ -167,6 +288,7 @@ public class RSSGUIMenuBar extends JFrame implements MenuListener, KeyListener, 
         
         // creat test menu item
         testOption = new JMenuItem("Test");
+        testOption.setFont(new Font("Serif", Font.PLAIN, 24));
         testOption.setMnemonic(KeyEvent.VK_X);
         testOption.addActionListener(this);
         shop.addSeparator();
@@ -174,11 +296,14 @@ public class RSSGUIMenuBar extends JFrame implements MenuListener, KeyListener, 
         
         // creat exit menu item
         exit = new JMenuItem("Exit");
+        exit.setFont(new Font("Serif", Font.PLAIN, 24));
         exit.setMnemonic(KeyEvent.VK_X);
         exit.addActionListener(this);
         shop.addSeparator();
         shop.add(exit);
       
+        
+        
         // add menu bar to frame
         this.setJMenuBar(menuBar);
         
@@ -256,12 +381,6 @@ public class RSSGUIMenuBar extends JFrame implements MenuListener, KeyListener, 
             a.setVisible(true);
             setLayout(new FlowLayout());
             setSize(898,698);
-            setTitle("Test2");
-            //setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-            setLocationRelativeTo(null);
-        
-            JRadioButton testButton = new JRadioButton("blagh");
-            add(testButton);
             setTitle("Browse Parts");
             //setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
             setLocationRelativeTo(null);
@@ -275,7 +394,9 @@ public class RSSGUIMenuBar extends JFrame implements MenuListener, KeyListener, 
         }
         
      
-        JTable table = new JTable(partsData, columnNames);   
+        JTable table = new JTable(partsData, columnNames);
+        table.getTableHeader().setFont(new Font("Serif", Font.PLAIN, 22));
+        table.setFont(new Font("Serif", Font.PLAIN, 22));
         JScrollPane scrollPane = new JScrollPane(table);
         table.setFillsViewportHeight(true);
         table.disable();
@@ -312,12 +433,85 @@ public class RSSGUIMenuBar extends JFrame implements MenuListener, KeyListener, 
             f.setVisible(true);
             setLayout(new FlowLayout());
             setSize(896,696);
-            setTitle("Test4");
-            //setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            setTitle("New Parts");
+            
             setLocationRelativeTo(null);
+            //add radio buttons to the layout
+            add(torsoButton);
+            add(headButton);
+            add(armButton);
+            add(locoButton);
+            
+            //Add buttons to group so it can un/select buttons automatically
+            ButtonGroup group = new ButtonGroup();
+            group.add(torsoButton);
+            group.add(headButton);
+            group.add(armButton);
+            group.add(locoButton);
+            
+            add(nextPage);
+            
+        }
         
-            JRadioButton testButton = new JRadioButton("TEST4");
-            add(testButton);
+        if(e.getSource().equals(torsoButton)||e.getSource().equals(locoButton)||e.getSource().equals(headButton)||e.getSource().equals(armButton)){
+        nextPage.setEnabled(true);
+        }
+        /*if(armButton.isSelected()==true){
+            nextPage.setEnabled(true);
+            }
+        if(armButton.isSelected()==false){
+            nextPage.setEnabled(false);
+            }
+        */
+        if(e.getSource().equals(nextPage)){
+           JPanel f = new JPanel();
+            getContentPane().removeAll();
+            f.setVisible(true);
+            //setLayout(new FlowLayout());
+            setSize(899,699);
+            setTitle("New Parts");
+            setLocationRelativeTo(null);
+            setLayout(new GridLayout(9,4,10,10)); 
+            
+            pName.setHorizontalAlignment(SwingConstants.LEFT);
+            add(name);
+            name.setHorizontalAlignment(SwingConstants.LEFT);
+            add(pName);
+            add(weight);
+            weight.setHorizontalAlignment(SwingConstants.LEFT);
+            add(pWeight);
+            add(price);
+            price.setHorizontalAlignment(SwingConstants.LEFT);
+            add(pPrice);
+            add(desc);
+            desc.setHorizontalAlignment(SwingConstants.LEFT);
+            add(pDesc);
+            add(abs);
+            abs.setHorizontalAlignment(SwingConstants.LEFT);
+            add(pAbs);
+            add(aprv);
+            aprv.setHorizontalAlignment(SwingConstants.LEFT);
+            add(pAprv);
+            add(batteries);
+            batteries.setHorizontalAlignment(SwingConstants.LEFT);
+            add(pBatteries);
+            add(armSockets);
+            armSockets.setHorizontalAlignment(SwingConstants.LEFT);
+            add(pArmSockets);
+            add(nextPage2,LEFT_ALIGNMENT);
+        }
+        if(e.getSource().equals(nextPage2)){
+            RSSGUIPartManager.createNewPart(2);
+            JPanel f = new JPanel();
+            getContentPane().removeAll();
+            f.setVisible(true);
+            setLayout(new FlowLayout());
+            setSize(895,695);
+            setTitle("Home Page");
+            setLocationRelativeTo(null);
+            JOptionPane.showMessageDialog(null, "Part has been created");
+        
+           
         }
         // search model
         if(e.getSource().equals(searchModels))
@@ -337,17 +531,6 @@ public class RSSGUIMenuBar extends JFrame implements MenuListener, KeyListener, 
         // browse model
         if(e.getSource().equals(browseModels))
         {
-            JPanel f = new JPanel();
-            getContentPane().removeAll();
-            f.setVisible(true);
-            setLayout(new FlowLayout());
-            setSize(894,694);
-            setTitle("Test6");
-            //setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-            setLocationRelativeTo(null);
-        
-            JRadioButton testButton = new JRadioButton("TEST6");
-            add(testButton);
             JPanel a = new JPanel();
             getContentPane().removeAll();
             a.setVisible(true);
@@ -356,7 +539,7 @@ public class RSSGUIMenuBar extends JFrame implements MenuListener, KeyListener, 
             setTitle("Browse Models");
             //setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
             setLocationRelativeTo(null);
-            String[] columnNames = {"Model Number", "Name","Torso", "Battery1","Battery2","Battery3","Arm1","Arm2","Locomotor","Head"};
+            String[] columnNames = {"Name","Torso", "Battery1","Battery2","Battery3","Arm1","Arm2","Locomotor","Head"};
         
         
        for(int i = 0; i<20; i++)
@@ -366,6 +549,8 @@ public class RSSGUIMenuBar extends JFrame implements MenuListener, KeyListener, 
         
      
         JTable table = new JTable(modelsData, columnNames);   
+        table.getTableHeader().setFont(new Font("Serif", Font.PLAIN, 22));
+        table.setFont(new Font("Serif", Font.PLAIN, 22));
         JScrollPane scrollPane = new JScrollPane(table);
         table.setFillsViewportHeight(true);
         table.disable();
@@ -398,15 +583,44 @@ public class RSSGUIMenuBar extends JFrame implements MenuListener, KeyListener, 
             JPanel f = new JPanel();
             getContentPane().removeAll();
             f.setVisible(true);
-            setLayout(new FlowLayout());
-            setSize(892,692);
-            setTitle("Test8");
-            //setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            //setLayout(new FlowLayout());
+            setSize(898,689);
+            setTitle("New Model");
             setLocationRelativeTo(null);
-        
-            JRadioButton testButton = new JRadioButton("TEST8");
-            add(testButton);
+            setLayout(new GridLayout(9,4,10,10)); 
+            
+            mName.setHorizontalAlignment(SwingConstants.LEFT);
+            add(mName);
+            modName.setHorizontalAlignment(SwingConstants.LEFT);
+            add(modName);
+            add(tNum);
+            tNum.setHorizontalAlignment(SwingConstants.LEFT);
+            add(torsNum);
+            add(lNum);
+            lNum.setHorizontalAlignment(SwingConstants.LEFT);
+            add(locNum);
+            add(hNum);
+            hNum.setHorizontalAlignment(SwingConstants.LEFT);
+            add(headNum);
+            add(modelSubmitPage);
+            
         }
+        
+        if(e.getSource().equals(modelSubmitPage)){
+            RSSGUIModelManager.createNewModel();
+            JPanel f = new JPanel();
+            getContentPane().removeAll();
+            f.setVisible(true);
+            setLayout(new FlowLayout());
+            setSize(897,692);
+            setTitle("Home Page");
+            setLocationRelativeTo(null);
+            JOptionPane.showMessageDialog(null, "Model has been created");
+        
+           
+        }
+        
+        
         // search order
         if(e.getSource().equals(searchOrders))
         {
@@ -425,17 +639,6 @@ public class RSSGUIMenuBar extends JFrame implements MenuListener, KeyListener, 
         // browse order
         if(e.getSource().equals(browseOrders))
         {
-            JPanel f = new JPanel();
-            getContentPane().removeAll();
-            f.setVisible(true);
-            setLayout(new FlowLayout());
-            setSize(890,690);
-            setTitle("Test10");
-            //setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-            setLocationRelativeTo(null);
-        
-            JRadioButton testButton = new JRadioButton("TEST10");
-            add(testButton);
             JPanel a = new JPanel();
             getContentPane().removeAll();
             a.setVisible(true);
@@ -452,7 +655,9 @@ public class RSSGUIMenuBar extends JFrame implements MenuListener, KeyListener, 
         }
         
      
-        JTable table = new JTable(ordersData, columnNames);   
+        JTable table = new JTable(ordersData, columnNames);  
+        table.getTableHeader().setFont(new Font("Serif", Font.PLAIN, 22));
+        table.setFont(new Font("Serif", Font.PLAIN, 22));
         JScrollPane scrollPane = new JScrollPane(table);
         table.setFillsViewportHeight(true);
         table.disable();
@@ -486,14 +691,40 @@ public class RSSGUIMenuBar extends JFrame implements MenuListener, KeyListener, 
             JPanel f = new JPanel();
             getContentPane().removeAll();
             f.setVisible(true);
-            setLayout(new FlowLayout());
-            setSize(888,688);
-            setTitle("Test12");
-            //setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            //setLayout(new FlowLayout());
+            setSize(893,699);
+            setTitle("New Orders");
             setLocationRelativeTo(null);
+            setLayout(new GridLayout(9,4,10,10)); 
+            
+            add(cNum);
+            cNum.setHorizontalAlignment(SwingConstants.LEFT);
+            add(custNum);
+            add(sNum);
+            sNum.setHorizontalAlignment(SwingConstants.LEFT);
+            add(salNum);
+            add(rNum);
+            rNum.setHorizontalAlignment(SwingConstants.LEFT);
+            add(robNum);
+            add(q);
+            q.setHorizontalAlignment(SwingConstants.LEFT);
+            add(quantity);
+            add(orderSubmitPage);
+            
+        }
         
-            JRadioButton testButton = new JRadioButton("TEST12");
-            add(testButton);
+        if(e.getSource().equals(orderSubmitPage)){
+            RSSGUIOrderManager.createNewOrder();
+            JPanel f = new JPanel();
+            getContentPane().removeAll();
+            f.setVisible(true);
+            setLayout(new FlowLayout());
+            setSize(897,692);
+            setTitle("Home Page");
+            setLocationRelativeTo(null);
+            JOptionPane.showMessageDialog(null, "Order has been created");
+        
+           
         }
         // search customer
         if(e.getSource().equals(searchCustomers))
@@ -513,18 +744,6 @@ public class RSSGUIMenuBar extends JFrame implements MenuListener, KeyListener, 
         // browse customer
         if(e.getSource().equals(browseCustomers))
         {
-            JPanel f = new JPanel();
-            getContentPane().removeAll();
-            f.setVisible(true);
-            setLayout(new FlowLayout());
-            setSize(886,686);
-            setTitle("Test14");
-            //setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-            setLocationRelativeTo(null);
-        
-            JRadioButton testButton = new JRadioButton("TEST14");
-            add(testButton);
-            
             JPanel a = new JPanel();
             getContentPane().removeAll();
             a.setVisible(true);
@@ -542,6 +761,8 @@ public class RSSGUIMenuBar extends JFrame implements MenuListener, KeyListener, 
         
      
         JTable table = new JTable(customersData, columnNames);   
+        table.getTableHeader().setFont(new Font("Serif", Font.PLAIN, 22));
+        table.setFont(new Font("Serif", Font.PLAIN, 22));
         JScrollPane scrollPane = new JScrollPane(table);
         table.setFillsViewportHeight(true);
         table.disable();
@@ -575,15 +796,33 @@ public class RSSGUIMenuBar extends JFrame implements MenuListener, KeyListener, 
             JPanel f = new JPanel();
             getContentPane().removeAll();
             f.setVisible(true);
-            setLayout(new FlowLayout());
-            setSize(884,684);
-            setTitle("Test16");
-            //setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            //setLayout(new FlowLayout());
+            setSize(888,690);
+            setTitle("New Customer");
             setLocationRelativeTo(null);
-        
-            JRadioButton testButton = new JRadioButton("TEST16");
-            add(testButton);
+            setLayout(new GridLayout(9,4,10,10)); 
+            
+            add(ccName);
+            ccName.setHorizontalAlignment(SwingConstants.LEFT);
+            add(cc);
+            add(custSubmitPage);
+            
         }
+        
+        if(e.getSource().equals(custSubmitPage)){
+            RSSGUICustomerManager.createNewCustomer();
+            JPanel f = new JPanel();
+            getContentPane().removeAll();
+            f.setVisible(true);
+            setLayout(new FlowLayout());
+            setSize(897,692);
+            setTitle("Home Page");
+            setLocationRelativeTo(null);
+            JOptionPane.showMessageDialog(null, "Customer has been added");
+        
+           
+        }
+        
         // search employee
         if(e.getSource().equals(searchEmployees))
         {
@@ -602,17 +841,6 @@ public class RSSGUIMenuBar extends JFrame implements MenuListener, KeyListener, 
         // browse employee
         if(e.getSource().equals(browseEmployees))
         {
-            JPanel f = new JPanel();
-            getContentPane().removeAll();
-            f.setVisible(true);
-            setLayout(new FlowLayout());
-            setSize(882,682);
-            setTitle("Test18");
-            //setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-            setLocationRelativeTo(null);
-        
-            JRadioButton testButton = new JRadioButton("TEST18");
-            add(testButton);
             JPanel a = new JPanel();
             getContentPane().removeAll();
             a.setVisible(true);
@@ -630,6 +858,8 @@ public class RSSGUIMenuBar extends JFrame implements MenuListener, KeyListener, 
         
      
         JTable table = new JTable(employeesData, columnNames);   
+        table.getTableHeader().setFont(new Font("Serif", Font.PLAIN, 22));
+        table.setFont(new Font("Serif", Font.PLAIN, 22));
         JScrollPane scrollPane = new JScrollPane(table);
         table.setFillsViewportHeight(true);
         table.disable();
@@ -663,14 +893,34 @@ public class RSSGUIMenuBar extends JFrame implements MenuListener, KeyListener, 
             JPanel f = new JPanel();
             getContentPane().removeAll();
             f.setVisible(true);
-            setLayout(new FlowLayout());
-            setSize(880,680);
-            setTitle("Test20");
-            //setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            //setLayout(new FlowLayout());
+            setSize(881,691);
+            setTitle("New Employee");
             setLocationRelativeTo(null);
+            setLayout(new GridLayout(9,4,10,10)); 
+            
+            add(emp);
+            emp.setHorizontalAlignment(SwingConstants.LEFT);
+            add(empName);
+            add(tt);
+            tt.setHorizontalAlignment(SwingConstants.LEFT);
+            add(emptype);
+            add(empSubmitPage);
+            
+        }
         
-            JRadioButton testButton = new JRadioButton("TEST20");
-            add(testButton);
+        if(e.getSource().equals(empSubmitPage)){
+            RSSGUIEmployeesManager.createNewEmployee();
+            JPanel f = new JPanel();
+            getContentPane().removeAll();
+            f.setVisible(true);
+            setLayout(new FlowLayout());
+            setSize(897,692);
+            setTitle("Home Page");
+            setLocationRelativeTo(null);
+            JOptionPane.showMessageDialog(null, "Employee has been added");
+        
+           
         }
         // open report
         if(e.getSource().equals(openReport))
@@ -708,7 +958,7 @@ public class RSSGUIMenuBar extends JFrame implements MenuListener, KeyListener, 
             //Creating Test Data
             RRSCLI.createTestData();
             
-            // Prints “Hello, World” to a dialog box 
+            // Prints to a dialog box 
              JOptionPane.showMessageDialog(null, "TEST Parts, Model, Customer, & Employees have been created");
             
         }
