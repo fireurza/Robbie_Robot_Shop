@@ -10,8 +10,9 @@ import java.io.IOException;
 
 public class RRSCLI {
     
-    public static void main(String[] args) throws IOException{
+    public static void main(String[] args){
         boolean exit = false;
+        //TODO load in data
         do{
         clearScreen();
         printTitle();
@@ -53,9 +54,9 @@ public class RRSCLI {
             System.out.println("Unrecognized Input");
         }
         }while(!exit);
-        
+        //TODO save data
     }
-    
+        
     public static void printTitle() {
         System.out.println("========================");
         System.out.println("     Robbie Robots");
