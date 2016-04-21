@@ -1,4 +1,3 @@
-
 package robbie_robot_shop;
 import java.io.*;
 import java.util.*;
@@ -49,7 +48,7 @@ public class IOFile {
             if(head[i]!=null)
             {
                 
-                outfile.format("%s,%s,%.2f,%.2f,%s,%b,%b-", head[i].getType(), head[i].getName(), head[i].getWeight(), head[i].getPrice(),
+                outfile.format("%s,%s,%.2f,%.2f,%s,%b,%b\n", head[i].getType(), head[i].getName(), head[i].getWeight(), head[i].getPrice(),
                         head[i].getDescription(), head[i].getIsObsolete(), head[i].getIsApproved());
             }
             
@@ -70,7 +69,7 @@ public class IOFile {
         {
             if(arm[i]!=null)
             {
-                outfile.format("%s,%s,%.2f,%.2f,%s,%b,%b,%.2f-", arm[i].getType(), arm[i].getName(), arm[i].getWeight(), arm[i].getPrice(),
+                outfile.format("%s,%s,%.2f,%.2f,%s,%b,%b,%.2f\n", arm[i].getType(), arm[i].getName(), arm[i].getWeight(), arm[i].getPrice(),
                         arm[i].getDescription(), arm[i].getIsObsolete(), arm[i].getIsApproved(), arm[i].getPowerConsumptionRate());           
             }           
         }
@@ -88,7 +87,7 @@ public class IOFile {
         {
             if(loco[i]!=null)
             {
-                outfile.format("%s,%s,%.2f,%.2f,%s,%b,%b,%.2f,%.2f-", loco[i].getType(), loco[i].getName(), loco[i].getWeight(), loco[i].getPrice(),
+                outfile.format("%s,%s,%.2f,%.2f,%s,%b,%b,%.2f,%.2f\n", loco[i].getType(), loco[i].getName(), loco[i].getWeight(), loco[i].getPrice(),
                         loco[i].getDescription(), loco[i].getIsObsolete(), loco[i].getIsApproved(), loco[i].getMaxSpeed(), loco[i].getPowerConsumtionRate());               
             }
         }
