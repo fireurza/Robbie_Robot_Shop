@@ -21,6 +21,8 @@ public class RSSGUIMenuBar extends JFrame implements MenuListener, KeyListener, 
     JMenuItem searchEmployees, browseEmployees, editEmployee, newEmployee;
     JMenuItem openReport, searchReport;
     
+    int partChoice;
+    
     
     //Radio buttons for new parts
     JRadioButton torsoButton = new JRadioButton("New Torso");
@@ -56,9 +58,9 @@ public class RSSGUIMenuBar extends JFrame implements MenuListener, KeyListener, 
         static JTextField pPrice = new JTextField(20);
         JLabel desc=new JLabel("Description:");
         static JTextField pDesc = new JTextField(20);
-        JLabel abs=new JLabel("Absolete part:");
+        JLabel abs=new JLabel("Absolete part [Y/y/N/n]:");
         static JTextField pAbs = new JTextField(20);
-        JLabel aprv=new JLabel("Approved:");
+        JLabel aprv=new JLabel("Approved [Y/y/N/n]:");
         static JTextField pAprv = new JTextField(20);
         JLabel batteries=new JLabel("No. of batteries:");
         static JTextField pBatteries = new JTextField(20);
@@ -456,13 +458,21 @@ public class RSSGUIMenuBar extends JFrame implements MenuListener, KeyListener, 
         if(e.getSource().equals(torsoButton)||e.getSource().equals(locoButton)||e.getSource().equals(headButton)||e.getSource().equals(armButton)){
         nextPage.setEnabled(true);
         }
-        /*if(armButton.isSelected()==true){
-            nextPage.setEnabled(true);
+        
+        if(armButton.isSelected()==true){
+            partChoice=2;
             }
-        if(armButton.isSelected()==false){
-            nextPage.setEnabled(false);
+        if(torsoButton.isSelected()==false){
+            partChoice=1;
             }
-        */
+        if(locoButton.isSelected()==true){
+            partChoice=4;
+            }
+        if(headButton.isSelected()==true){
+            partChoice=0;
+            }
+        
+        
         if(e.getSource().equals(nextPage)){
            JPanel f = new JPanel();
             getContentPane().removeAll();
@@ -501,7 +511,7 @@ public class RSSGUIMenuBar extends JFrame implements MenuListener, KeyListener, 
             add(nextPage2,LEFT_ALIGNMENT);
         }
         if(e.getSource().equals(nextPage2)){
-            RSSGUIPartManager.createNewPart(2);
+            RSSGUIPartManager.createNewPart(partChoice);
             JPanel f = new JPanel();
             getContentPane().removeAll();
             f.setVisible(true);

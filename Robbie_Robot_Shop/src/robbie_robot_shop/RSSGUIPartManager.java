@@ -67,22 +67,86 @@ public class RSSGUIPartManager extends JFrame {
         
         
     }
-            public static void createNewPart(int PartType){
+            public static void createNewPart(int PartNum){
             
-        String pname = RSSGUIMenuBar.pName.getText();
-        double weight = Double.parseDouble(RSSGUIMenuBar.pWeight.getText());
-        double price =  Double.parseDouble(RSSGUIMenuBar.pPrice.getText());
-        String description = RSSGUIMenuBar.pDesc.getText();
-        String abs = RSSGUIMenuBar.pAbs.getText();
-        String aprv = RSSGUIMenuBar.pAprv.getText();
+        
+         
+        if(PartNum==0)   {        
+            String pname = RSSGUIMenuBar.pName.getText();
+            double weight = Double.parseDouble(RSSGUIMenuBar.pWeight.getText());
+            double price =  Double.parseDouble(RSSGUIMenuBar.pPrice.getText());
+            String description = RSSGUIMenuBar.pDesc.getText();
+            String abs = RSSGUIMenuBar.pAbs.getText();
+            String aprv = RSSGUIMenuBar.pAprv.getText();
+            boolean obsolete=false;
+            boolean approved = false;
+        
+            if(abs.equals("y")||abs.equals("Y"))
+                obsolete = true;
+            if(aprv.equals("y")||aprv.equals("Y"))
+                approved = true;
+            Shop.createHead(pname, weight, price, description, obsolete, approved);
+        }
+        
+        
+        if(PartNum==1)
+        {
+        String Tname = RSSGUIMenuBar.pName.getText();
+        double Tweight = Double.parseDouble(RSSGUIMenuBar.pWeight.getText());
+        double Tprice = Double.parseDouble(RSSGUIMenuBar.pPrice.getText());
+        String Tdescription = RSSGUIMenuBar.pDesc.getText();
+        String Tobsolete = RSSGUIMenuBar.pAbs.getText();
+        String Tapproved = RSSGUIMenuBar.pAprv.getText();
         boolean obsolete=false;
         boolean approved = false;
+        int TbatteryCompartments = 3;
+        int TarmSockets = 3;
+        if(Tobsolete.equals("y")||Tobsolete.equals("Y"))
+                obsolete = true;
+            if(Tapproved.equals("y")||Tapproved.equals("Y"))
+                approved = true;
+        Shop.createTorso(Tname, Tweight, Tprice, Tdescription, obsolete, approved, TbatteryCompartments, TarmSockets);
         
-        if(abs.equals("y")||abs.equals("Y"))
-            obsolete = true;
-        if(aprv.equals("y")||aprv.equals("Y"))
-            approved = true;
+        
+        
+        }
+        if(PartNum==4)
+        {
+            String pname = RSSGUIMenuBar.pName.getText();
+            double weight = Double.parseDouble(RSSGUIMenuBar.pWeight.getText());
+            double price =  Double.parseDouble(RSSGUIMenuBar.pPrice.getText());
+            String description = RSSGUIMenuBar.pDesc.getText();
+            String abs = RSSGUIMenuBar.pAbs.getText();
+            String aprv = RSSGUIMenuBar.pAprv.getText();
+            boolean obsolete=false;
+            boolean approved = false;
+        
+            if(abs.equals("y")||abs.equals("Y"))
+                obsolete = true;
+            if(aprv.equals("y")||aprv.equals("Y"))
+                approved = true;
+            double LmaxSpeed = 5;
+            double LpowerConsumed = 50;
+            Shop.createLocomotor(pname, weight, price, description, obsolete, approved, LmaxSpeed, LpowerConsumed);
+        }
+        if(PartNum==2){
             
-        Shop.createHead(pname, weight, price, description, obsolete, approved);
+            String pname = RSSGUIMenuBar.pName.getText();
+            double weight = Double.parseDouble(RSSGUIMenuBar.pWeight.getText());
+            double price =  Double.parseDouble(RSSGUIMenuBar.pPrice.getText());
+            String description = RSSGUIMenuBar.pDesc.getText();
+            String abs = RSSGUIMenuBar.pAbs.getText();
+            String aprv = RSSGUIMenuBar.pAprv.getText();
+            boolean obsolete=false;
+            boolean approved = false;
+        
+            if(abs.equals("y")||abs.equals("Y"))
+                obsolete = true;
+            if(aprv.equals("y")||aprv.equals("Y"))
+                approved = true;
+            double ApowerConsumption = 30;
+        Shop.createArm(pname, weight, price, description, obsolete, approved, ApowerConsumption);
+        
+        }
             }
 }
