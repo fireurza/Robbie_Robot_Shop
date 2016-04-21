@@ -12,6 +12,8 @@ public class RRSCLI {
     
     public static void main(String[] args){
         boolean exit = false;
+        IOFile file = new IOFile();
+        file.readAll();
         //TODO load in data
         do{
         clearScreen();
@@ -55,6 +57,7 @@ public class RRSCLI {
         }
         }while(!exit);
         //TODO save data
+        file.writeAll();
     }
         
     public static void printTitle() {
@@ -103,9 +106,6 @@ public class RRSCLI {
         if (Shop.orderCounter == 0){
             Shop.newOrder(0, 0, 0, 99, 1.0);
         }
-        IOFile file = new IOFile();
-        file.writeAll();
-        
         System.out.println("TEST parts, model, customer, & employees created");
     }
 }
