@@ -1,0 +1,10 @@
+head,testHead,99.99,99.99,testHead Description,false,true
+head,The All Seeing Eye,10.05,235.95,360 degrees of vision in a multi-camera array,false,true
+
+torso,testTorso,99.990000,99.990000,testTorso Description,false,true,3,2
+
+arm,testArm,99.99,99.99,testArm Description,false,true,99.99
+
+battery,testBattery,99.99,99.99,testBattery Description,false,true,99.99,99.99
+
+locomotor,testLocomotor,99.99,99.99,testLocomotor Description,false,true,99.99,99.99
